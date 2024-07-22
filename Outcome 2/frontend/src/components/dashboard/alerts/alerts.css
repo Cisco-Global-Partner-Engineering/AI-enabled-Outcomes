@@ -1,0 +1,30 @@
+
+.card{
+    width: 560px;
+    height: 400px;
+    background-color: white;
+    margin-left: 1%;
+}
+
+.card-title{
+    font-size: 20px;
+    padding-top: 2%;
+    margin-left: 3%;
+    color: #403F3F;
+}
+
+.hr{
+    display: block;
+    border-top: 1px rgb(90, 90, 90) solid;
+    width: 520px;
+    margin-top: 3%;
+    margin-left: 2%;
+}
+
+
+.card-footer{
+    font-size: 15px;
+    margin-left: 2%;
+    cursor: pointer;
+}
+

@@ -1,0 +1,231 @@
+MERAKI RUNBOOK : {
+
+    Overview
+    This document list all the alerts available under Connectivity Issues alert category, their triggers, and troubleshooting steps.  Please refer to Alerts article to learn more. 
+
+    Dormant status for the Meraki device indicate that  - The Cisco Meraki device is currently offline and has been offline for at least a week (dormant). It can be sensors or other devices that are not sensors.
+
+    If the Meraki Appliance is dormant, then it means that it has been offline for more than a week. Find the steps as applicable from below list to bring back the connectivity for the meraki dormant appliance.
+
+    Meraki Offline/Dormant/Failures :
+
+    802.1X failure
+    Triggers
+    The "Recent 802.1X Failure" alert will be displayed if the periodic access-request messages sent to the configured RADIUS servers are unreachable, using a timeout period of 10 seconds. For more information refer to Alert - Recent 802.1X Failure.
+
+    With RADIUS testing enabled, all RADIUS servers will be tested by every node at least once per 24 hours regardless of test result. If a RADIUS test fails for a given node it will be tested again every hour until a passing result occurs. A subsequent pass will mark the server reachable and clear the alert, returning to the 24 hour testing cycle.
+
+    Troubleshooting Steps
+    Please refer to RADIUS Issue Resolution Guide for detailed troubleshooting flow. 
+
+    VPN problems on SSID
+    Trigger
+    If the tunnel connection between MR and MX is not functioning properly the access point will show this alert. 
+
+    Troubleshooting Steps
+    Please refer to the Service set identifier (SSID) Tunneling and Layer 3 Roaming - VPN Concentration documentation for more information. Make sure the upstream firewall is not blocking any of the UDP ports used for the VPN registry. 
+
+    Unreachable Device(s)
+    Triggers
+    Unreachable or Has never connected to the Meraki dashboard alerts are usually triggered due to a problem in the path from the node to the Meraki cloud. Since the node is no longer able to communicate with the Meraki cloud, the dashboard reports it through the alert.
+
+    Troubleshooting Steps
+
+    Are there any outages currently reported in status.meraki.net?
+
+    No current outage              Current outage reported
+
+    Additionally, accessing the Cisco Meraki Device Local Status Page may be required to perform offline troubleshooting steps, such as reviewing offline status details and alerts, configuring a static IP assignment to regain network connectivity, or gathering the Support Data Bundle (SDB) diagnostic logs to share with Cisco Meraki Support.
+
+    Note: If a device remains offline after troubleshooting via the local status page and further assistance is needed, it is recommended to collect the Support Data Bundle (SDB) and share it with the Meraki support team, along with screenshots of the Local Status Page. 
+
+
+    Meraki Device(s) has never connected to the Meraki cloud
+    Trigger
+    This alert indicates the device in question has, while assigned to the current account, never checked in with the Meraki Cloud controller. This is common to see straight away after a first-time setup and should be resolved after a few minutes. However, that is not always the case.
+
+    Troubleshooting Steps
+    Please use the same troubleshooting flow seen on Unreachable devices(s).
+
+    Bad Internet Connection
+    Triggers
+    If a Meraki device is having problems contacting the Meraki cloud through your firewall, content filter, or proxy server, you will experience the following issues and alerts on your Meraki network and dashboard:
+
+    Yellow connectivity icon on the devices list page and individual device detail page. 
+    Orange bars on the connectivity graph.
+    "This device has poor connectivity to the Meraki controller, possibly due to an asymmetric firewall or network address translation (NAT) issue." is reported on the device details page in dashboard.
+
+    Meraki Devices cannot connect to your network
+    Troubleshooting Steps
+    This is generally caused by an upstream firewall not using stateful packet inspection. In this instance, the Meraki device's TCP synchronize (SYN) packet is reaching the cloud. When the cloud responds to the Meraki device with a TCP synchronize acknowledge (SYN/ACK), it is dropped by the firewall. The Meraki device waiting on the TCP SYN/ACK never receives it. Therefore an acknowledgement TCP ACK from the Meraki device is never sent back to the controller to establish the TCP connection. This is called one-way traffic. 
+
+    This issue can also be caused when you have two different routers connected to your LAN segment to route traffic to different networks. In this instance traffic from remote network enters the LAN from one router's interface and is sent to a LAN device. When the LAN device replies, it sends the reply to the other router's interface. The router receiving the frame discards the packet because it only sees half of the connection.
+
+    To isolate and potentially remedy these issues and alerts please try the following: 
+
+    Move your Meraki device to a different network segment where other devices are working and then analyze the difference in the path to the internet. 
+    Verify that your firewall or any other security devices within your network are not modifying the Meraki device's traffic.
+    Allow your Meraki devices to bypass your firewall, content filter, proxy server or any other security devices. 
+    Make sure your firewall is performing stateful packet inspection which allows incoming packets if they are part of an established connection.
+    Make sure you only have a single entry and exit interface on your LAN segment.
+    For more information on configuring your firewall to support the Meraki Cloud, please review this article: Upstream Firewall Rules for Cloud Connectivity.
+
+    Meraki devices Cannot Find a Gateway to the Internet
+    Triggers
+    The Meraki device is powered on but is not able to use its Ethernet connection or an MR is unable to mesh to another MR in the same dashboard network.
+
+    Troubleshooting Steps
+    If the device is expected to use its Ethernet port for connectivity to the internet:
+
+    Confirm the device is establishing a link with the upstream device through its Ethernet port
+    Confirm the device is receiving an IP address from the DHCP server or has a valid static IP assigned (see Static IP Assignment on a Cisco Meraki Access Point).
+    Connect to a known working network connection with access to the internet
+    A working internet connection would have access to the IPs, ports, and protocols defined under Help > Firewall info (Upstream Firewall Rules for Cloud Connectivity) in the dashboard and would be able to successfully pass the connection monitoring test (see Connection Monitoring for WAN Failover article)
+    If the network's design is expected to have an MR functioning as a mesh repeater (refer to Using a Cisco Meraki Access Point as a Mesh Repeater), confirm there is an MR in the same dashboard network that is within wireless range and strong enough of a signal.
+
+    Meraki device has Poor Connectivity to the Meraki Cloud
+    Triggers
+    When this alert is shown, it is due to a wrong configuration on network equipment (typically a firewall or a device performing NAT) that is supposed to let the Meraki device connect to the internet.
+
+    Troubleshooting Steps
+    This is generally caused by an upstream firewall not using stateful packet inspection. In this instance, the Meraki device's TCP SYN packet is reaching the cloud. When the cloud responds to the Meraki device with a TCP SYN/ACK, it is dropped by the firewall. The Meraki device waiting on the TCP SYN/ACK never receives it. Therefore an acknowledgement TCP ACK from the Meraki device is never sent back to the controller to establish the TCP connection. This is called one-way traffic. 
+
+    This issue can also be caused when you have two different routers connected to your LAN segment to route traffic to different networks. In this instance traffic from remote network enters the LAN from one router's interface and is sent to a LAN device. When the LAN device replies, it sends the reply to the other router's interface. The router receiving the frame discards the packet because it only sees half of the connection.
+
+    To isolate and potentially remedy these issues and alerts please try the following: 
+
+    Move your Meraki device to a different network segment where other devices are working and then analyze the difference in the path to the internet. 
+    Verify that your firewall or any other security devices within your network are not modifying the Meraki device's traffic.
+    Allow your Meraki devices to bypass your firewall, content filter, proxy server or any other security devices. 
+    Make sure your firewall is performing stateful packet inspection which allows incoming packets if they are part of an ESTABLISHED connection.
+    Make sure you only have a single entry and exit interface on your LAN segment.
+    For more information on configuring your firewall to support the Meraki Cloud, please review this article: Upstream Firewall Rules for Cloud Connectivity.
+
+    Backup Cloud Connection Used
+    Triggers
+    The backup cloud connection is used when the primary connection fails. This helps Meraki devices to stay up to date even if there is a problem with the primary connection to the Meraki Cloud servers.
+
+    The backup connection can use port 80 or 443, but rest assured the data is encrypted despite how it is transported.
+
+    Troubleshooting Steps
+    Connecting to the Meraki Cloud is what allows Meraki device to show as online in the Meraki dashboard. For hardware to successfully check in with the Meraki Cloud controller, the following requirements must be met:
+
+    The hardware must have a valid IP assigned. If DHCP does not automatically provide your hardware with an IP address, assign a static IP address to your device. 
+    UDP port 7351 must be allowed on any firewalls or devices upstream. The Meraki Go hardware uses the UDP on the referenced ports to check-in to the cloud.
+    For more information on configuring your firewall to support the Meraki Cloud, please review this article: Upstream Firewall Rules for Cloud Connectivity.
+
+    Meraki Cloud Communication Issues
+    Triggers
+    When this alert is shown, it is due to a wrong configuration on network equipment (typically a firewall or a device performing NAT) that is supposed to let the Meraki device connect to the internet.
+
+    Troubleshooting Steps
+    This is generally caused by an upstream firewall not using stateful packet inspection. In this instance, the Meraki device's TCP SYN packet is reaching the cloud. When the cloud responds to the Meraki device with a TCP SYN/ACK, it is dropped by the firewall. The Meraki device waiting on the TCP SYN/ACK never receives it. Therefore an acknowledgement TCP ACK from the Meraki device is never sent back to the controller to establish the TCP connection. This is called one-way traffic. 
+
+    This issue can also be caused when you have two different routers connected to your LAN segment to route traffic to different networks. In this instance traffic from remote network enters the LAN from one router's interface and is sent to a LAN device. When the LAN device replies, it sends the reply to the other router's interface. The router receiving the frame discards the packet because it only sees half of the connection.
+
+    To isolate and potentially remedy these issues and alerts please try the following: 
+
+    Move your Meraki device to a different network segment where other devices are working and then analyze the difference in the path to the internet. 
+    Verify that your firewall or any other security devices within your network are not modifying the Meraki device's traffic.
+    Allow your Meraki devices to bypass your firewall, content filter, proxy server or any other security devices. 
+    Make sure your firewall is performing stateful packet inspection which allows incoming packets if they are part of an established connection.
+    Make sure you only have a single entry and exit interface on your LAN segment.
+    For more information on configuring your firewall to support the Meraki Cloud, please review this article: Upstream Firewall Rules for Cloud Connectivity.
+
+    Cellular Failover Active
+    Triggers
+    Loss of all wired uplinks, which includes but not limited to port down, device DNS/ping failures, and so on.
+
+    Troubleshooting Steps
+    Verify the wired connection is up via the port status on the dashboard or via the port status LED on the device
+    When there is a physical connection up perform tests via the dashboard under Security & SD-WAN > Monitor > Appliance Status > Tools
+    Ping can be used to check if the appliance can reach IPs on the internet, local gateway, and so on
+    When there is no physical connection up
+    Check the cable connection and power to the modem
+    Testing with new cables or known working cables
+    Contact the ISP 
+    VLAN Disconnect
+    Triggers
+    Both switches in the Virtual route redundancy protocol (VRRP) setup listen to VRRP advertisements on all VLANs configured as layer 3 interface. When a switch fails to receive VRRP advertisements on any of these VLANs this alert is triggered. 
+
+    Troubleshooting Steps
+    Check if the ports between the primary and secondary devices are allowing all the VLANs. If not update the ports to allow all the VLANs. 
+    If VLANs are allowed run packet capture on those ports and check which VLAN is missing VRRP advertisement and contact Meraki support to further troubleshoot the issue. 
+    VRRP failover
+    Triggers
+    This alert is triggered if the spare device becomes the primary. To learn more about how VRRP works please refer to the MS Warm Spare (VRRP) Overview article.
+
+    Troubleshooting Steps
+    Confirm the primary switch is establishing layer 1 connectivity with the spare switch.
+    Make sure VLANs configured as layer 3 interface are allowed between the primary and spare switch.
+    Check if the primary switch is functioning properly as per other troubleshooting sections within this article.
+    Site-to-Site Auto VPN Down
+    Triggers 
+    This alert is triggered if the Meraki auto VPN connection to a neighboring site is down for more than 5 minutes. 
+
+    Troubleshooting Steps
+    Please refer to Meraki Auto VPN - Configuration and Troubleshooting for more information on how to troubleshoot auto VPN issues. 
+
+    Mass Disassociation Event
+    Triggers 
+    This is triggered when 5 client disassociations are detected in a 5 seconds window time
+
+    Troubleshooting Steps
+    Check Wireless and radio settings, and check and troubleshoot affected AP's
+
+    Channel With High Interference
+    Triggers 
+    A radio channel has detected high interference from external sources, check for sources of 2.4GHz or 5GHz emissions in the immediate vicinity…
+
+    Microwaves
+
+    Cordless Phones
+
+    Tablets
+
+    Direct Satellite Service
+
+    Certain external electrical sources such as power lines, electrical railroad tracks, and power stations
+
+    Wi-Fi Cameras
+
+    Baby Monitors
+
+    2-Way Radios
+
+    Unshielded power or video cables
+
+    Troubleshooting Steps
+    It is possible to reduce the interface in your environment, if you are able to effectively isolate the cause(s) and take steps to reduce the interference.
+
+    To identify every device in your environment using the 2.4GHz and 5.0 GHz bandwidths, it will be necessary to check the specifications on every electronic device. Keep in mind that while they may not list the bandwidth, they are using these radio frequencies if they are noted to be "Bluetooth", "Wi-Fi" or "Wireless" devices.
+
+    No Telemetry Being Received 
+    Trigger
+    Device is not transmitting telemetry data to Dashboard
+
+    Troubleshooting Steps
+    Check network connectivity and gateway route
+    Check firmware version
+    Check username/password 
+    Never Connected to the Meraki Cloud
+    Triggers 
+
+    A new or existing device has never initiated a connection with the Meraki Cloud, Device has been added to inventory but has not checked in.
+
+    Troubleshooting Steps
+    Check device power and status lights and troubleshoot as necessary
+
+
+    Meraki sensors : Dormant Meraki Sensor devices (not applicable for meraki appliances)
+
+    Triggers
+    A sensor has not reported to the dashboard for more than a week. 
+
+    Troubleshooting Steps
+    Check the last reported battery of the sensor that is reporting as Dormant. If the battery% is less than 5%, its time to replace the batteries.
+    MT10/12 uses 2 AA batteries
+    MT20 uses a single AA battery
+    Make sure that the MT sensor is in range of a qualified gateway (MV or MR)
+    The signal strength to the gateway must be >-85 dBm for the sensor to communicate to the gateway. Note that even if the sensor data is not reported, the RSSI will still be recorded if a gateway is able to pick it up.
+}

@@ -1,0 +1,50 @@
+.overlay{
+    width: 80vw;
+    height: 60vh;
+    background-color: #EEEDED;
+    z-index: 100;
+    position: fixed;
+    bottom: 15%;
+    left: 2%;
+    padding: 5%;
+    padding-top: 0%;
+
+}
+
+.close-overlay{
+    padding: 5px;
+    cursor:  pointer;
+}
+
+.overlay-title{
+    font-size: 40px;
+    padding-top: 3%;
+    margin-left: 1%;
+    color: #403F3F;
+}
+
+.section-title{
+    margin-left: 1%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-size: 15px;
+}
+
+.section{
+    width: 1400px;
+    background-color: white;
+    margin-left: 1%;
+    padding: 1%;
+    margin-top: 1%;
+}
+
+.device-metrics{
+    display: flex;
+    justify-content: space-around;
+}
+
+.metrics-title{
+    color:#049fd9;
+    size: 15px;
+    font-weight: bolder;
+}

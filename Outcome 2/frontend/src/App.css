@@ -1,0 +1,22 @@
+.nav{
+  height: 10vh;
+  width: 100vw;
+  background-color: #D0EEFF;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img{
+  width: 125px;
+  height: 60px;
+  margin-left: 10%;
+}
+
+.nav-label{
+  margin-left: 2%;
+  width: 150px;
+}
+
+.nav-label-2{
+  margin-left: 75%;
+}

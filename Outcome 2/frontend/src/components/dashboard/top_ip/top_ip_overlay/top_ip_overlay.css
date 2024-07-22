@@ -1,0 +1,101 @@
+.overlay{
+    width: 80vw;
+    height: 60vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 100;
+    position: fixed;
+    margin-left: 5%;
+    bottom: 15%;
+    box-shadow: 1px 1px 3px;
+    left: 2%;
+    padding: 5%;
+    padding-top: 0%;
+}
+
+.ov-header{
+    margin: 1%;
+}
+
+.close-ov{
+    padding: 5px;
+    cursor:  pointer;
+    font-size: 15px;
+    margin-left: 1%;
+}
+
+.ov-title{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 1%;
+    color: #403F3F;
+}
+
+.ov-refresh-ts{
+    margin-left: 1%;
+    color:#049fd9;
+    font-size: 15px;
+
+}
+
+
+.row{
+    display: flex;
+    padding: 2%;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 12px;
+    background-color: white;
+    margin-right: 1%;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.labels{
+    font-weight: bolder;
+}
+
+.label-no, .label-ip, .label-count, .label-link{
+    width: 400px;
+}
+
+.label-url-color{
+    color: #049fd9;
+    cursor: pointer;
+}
+
+
+.ts{
+    width: 120px;
+}
+
+.level{
+    width: 120px;
+    margin-right: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.platform{
+    width: 200px;
+}
+
+.description{
+    width: 400px;
+}
+
+.url{
+    width: 400px;
+}
+
+.info-level{
+    background-color: green;
+}
+
+.war-level{
+    background-color: orange;
+}
+
+.cri-level{
+    background-color: red;
+}
