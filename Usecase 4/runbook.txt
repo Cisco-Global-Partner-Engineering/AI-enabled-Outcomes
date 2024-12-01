@@ -1,0 +1,1 @@
+In addition to the alarms listed under "component": "Security", If available, do ensure to tag alert types : 'utd-ips-alert', 'utd-notification', 'utd-con' and 'utd-file-reputation-alert' as a security alarm category

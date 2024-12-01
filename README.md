@@ -1,2 +1,2 @@
 # AI-enabled-Outcomes
-AI enabled Outcomes available to Cisco's Partners
+AI enabled usecases available to Cisco's Partners
