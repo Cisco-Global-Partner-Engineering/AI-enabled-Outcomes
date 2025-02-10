@@ -1,0 +1,92 @@
+{
+  "nodes": {
+    "Gateway": {
+      "interfaces": {
+        "E0/0": "172.16.110.1",
+        "E0/1": "172.16.110.5",
+        "E0/2": null,
+        "E0/3": "198.18.128.111"
+      }
+    },
+    "Internet": {
+      "interfaces": {
+        "E0/1": null,
+        "E0/2": null
+      }
+    },
+    "Internet-Gateway": {},
+    "unmanaged-switch-0": {},
+    "iol-l2-0": {
+      "interfaces": {
+        "E0/0": "10.10.10.1",
+        "E0/1": "172.16.110.2"
+      }
+    },
+    "iol-l2-1": {
+      "interfaces": {
+        "E0/0": "20.20.20.1",
+        "E0/1": "172.16.110.6"
+      }
+    },
+    "ubuntu-1": {
+      "interfaces": {
+        "Ens2": "10.10.10.2"
+      }
+    },
+    "ubuntu-0": {
+      "interfaces": {
+        "Ens2": "20.20.20.2",
+        "Ens3": "198.18.128.0/19"
+      }
+    },
+    "Management": {}
+  },
+  "links": [
+    {
+      "from": "Gateway",
+      "to": "Internet",
+      "from_interface": "Ethernet 0/2",
+      "to_interface": "E0/1"
+    },
+    {
+      "from": "Internet",
+      "to": "Internet-Gateway",
+      "from_interface": "E0/0"
+    },
+    {
+      "from": "Gateway",
+      "to": "iol-l2-0",
+      "from_interface": "Ethernet 0/0",
+      "subnet": "172.16.110.0/30"
+    },
+    {
+      "from": "Gateway",
+      "to": "iol-l2-1",
+      "from_interface": "Ethernet 0/1",
+      "subnet": "172.16.110.4/30"
+    },
+    {
+      "from": "iol-l2-0",
+      "to": "ubuntu-1",
+      "from_interface": "E0/0",
+      "subnet": "10.10.10.0/24"
+    },
+    {
+      "from": "iol-l2-1",
+      "to": "ubuntu-0",
+      "from_interface": "E0/0",
+      "subnet": "20.20.20.0/24"
+    },
+    {
+      "from": "unmanaged-switch-0",
+      "to": "Gateway",
+      "subnet": "198.18.128.0/19"
+    },
+    {
+      "from": "ubuntu-0",
+      "to": "unmanaged-switch-0",
+      "interface": "Ens3",
+      "subnet": "198.18.128.0/19"
+    }
+  ]
+}
