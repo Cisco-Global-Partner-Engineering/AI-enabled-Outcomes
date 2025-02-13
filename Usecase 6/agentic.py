@@ -2,10 +2,10 @@ import json
 import logging
 #from pprint import pformat
 #import time
-from datetime import datetime
-import CatalystCenter_auth
-import sdwan_alarm_reduce
-import vManageAlarms
+#from datetime import datetime
+#import CatalystCenter_auth
+#import sdwan_alarm_reduce
+#import vManageAlarms
 import dochat
 #import webex_notification
 #import websearch
@@ -29,10 +29,10 @@ logger = logging.getLogger(__name__)
 
 
 def new_alarm_intake():
-    alarms_catalystcenter = CatalystCenter_auth.get_health()
-    vManage_alarms = vManageAlarms.get_data()
-    alarms_sdwan = sdwan_alarm_reduce.analyze_alarms(alarms=vManage_alarms)
-    alarms_sdwan = alarms_sdwan["alarm_reduction"]["reduced_alarms"]
+    #alarms_catalystcenter = CatalystCenter_auth.get_health()
+    #vManage_alarms = vManageAlarms.get_data()
+    #alarms_sdwan = sdwan_alarm_reduce.analyze_alarms(alarms=vManage_alarms)
+    #alarms_sdwan = alarms_sdwan["alarm_reduction"]["reduced_alarms"]
 
     """ # Load alarms from Cisco Catalyst Center
     with open('alarms_catalystcenter.json') as f:
@@ -43,8 +43,8 @@ def new_alarm_intake():
         alarms_sdwan = alarms_sdwan["alarm_reduction"]["reduced_alarms"]
     """
     
-    alarms_catalystcenter = {"Cisco Catalyst Center": alarms_catalystcenter}
-    alarms_sdwan = {"Cisco SD-WAN Manager": alarms_sdwan}
+    #alarms_catalystcenter = {"Cisco Catalyst Center": alarms_catalystcenter}
+    #alarms_sdwan = {"Cisco SD-WAN Manager": alarms_sdwan}
     #Load ping results
     telemetry_result = ping_ubuntu.ping_from_remote_ubuntu()
     """
@@ -56,8 +56,8 @@ def new_alarm_intake():
     ping_result = {"Ping Result": [telemetry_result]}
 
     # Combine alarms into a single dictionary
-    alarms = {**alarms_catalystcenter, **alarms_sdwan, **ping_result}
-    #alarms = {**ping_result}
+    #alarms = {**alarms_catalystcenter, **alarms_sdwan, **ping_result}
+    alarms = {**ping_result}
 
     with open('combined_alarms.json', 'w') as f:
         json.dump(alarms, f, indent=4)
@@ -274,46 +274,57 @@ def agentic():
                     break
 
                 messages = [
-                    {
-                        "role": "system",
-                        "content": f"""
-                        Given the runbook: '{runbook}' and the network topology: '{topology}', analyze the provided alarm: '{alarm}' 
-                        based on:
-                        - The results of recent show commands from the router.
-                        - The latest end-to-end telemetry test results. 
-                        - **Make sure to prioritize the instructions mentioned in the runbook : '{runbook}'**.
+                            {
+                                "role": "system",
+                                "content": f"""
+                                [Internal Chain-of-Thought Instructions (Do Not Output):
+                                1. Parse the runbook instructions and network topology to set baseline assumptions.
+                                2. Examine the alarm details in relation to the runbook.
+                                3. Analyze the router's show command results for configuration or interface anomalies.
+                                4. Evaluate the latest telemetry test results for performance or connectivity issues.
+                                5. Cross-reference with previous RCA history to ensure uniqueness.
+                                6. Identify all potential issues but focus on the one change that would have the highest impact.
+                                7. Validate that the identified root cause is atomic (i.e., it requires exactly one network change).
+                                End of Internal Instructions]
 
-                        **Objectives**:  
-                        - Identify the **single most probable root cause** of the alarm. 
-                        - **Do not repeat any previous RCA** 
+                                Given the runbook: '{runbook}' and the network topology: '{topology}', please perform a step-by-step analysis of the provided alarm: '{alarm}' using the following data:
+                                - The network topology is the single source of truth on IP addressing and link paths.
+                                - The results from the recent show commands from the router.
+                                - The latest end-to-end telemetry test results.
+                                - **Prioritize the instructions mentioned in the runbook: '{runbook}'**.
 
-                        **Atomic RCA Requirement**:  
-                        - The root cause must be **atomic**, meaning it should result in exactly **one network change**.  
-                        - If multiple changes are needed to resolve the issue, **select only the most impactful single change** that is likely to resolve or contribute to resolving the issue.  
+                                **Objectives**:
+                                - Identify the **single most probable root cause** of the alarm.
+                                - **Do not repeat any previous RCA.**
 
-                        **Response Format (JSON only)**:  
-                        - If a probable root cause is found: `{{"rca": "<single identified root cause>"}}`  
-                        - If no RCA can be determined: `{{"rca": "none"}}`  
-                        - If the issue appears resolved: `{{"rca": "resolved"}}`  
+                                **Atomic RCA Requirement**:
+                                - The root cause must be **atomic**, meaning it should result in exactly **one network change**.
+                                - If multiple changes are necessary, **select only the most impactful single change** that is likely to resolve or contribute to resolving the issue.
 
-                        **Strict Requirements**:  
-                        - Return **only** a valid JSON object.  
-                        - Do **not** include explanations, comments, or any additional text.  
-                        - The RCA must be **a single actionable change** (e.g., "Bring up interface X", **not** "Bring up interface X and Y").  
-                        - If multiple issues are detected, **select the most probable single root cause** based on available data.
-                        - To ensure a logical and effective Root Cause Analysis (RCA) in network troubleshooting, it's essential to address foundational issues before delving into higher-level problems. For instance, if certain network interfaces are down, this could lead to missing routes. Therefore, it's prudent to first bring up the necessary interfaces and then verify if the routes are still missing.
+                                **Response Format (JSON only)**:
+                                - If a probable root cause is found: {{"rca": "<single identified root cause>"}}
+                                - If no RCA can be determined: {{"rca": "none"}}
+                                - If the issue appears resolved: {{"rca": "resolved"}}
 
-                        """
-                    },
-                    {
-                        "role": "user",
-                        "content": f"Router Results: {show_results}, Latest Telemetry: {telemetry_result}, Previous RCA: {rca_history}"
-                    }
-                ]
+                                **Strict Requirements**:
+                                - Return **only** a valid JSON object.
+                                - Do **not** include any explanations, comments, or additional text in your final output.
+                                - The RCA must be **a single actionable change** (for example, "Bring up interface X", **not** "Bring up interface X and Y").
+                                - If multiple issues are detected, **select the most probable single root cause** based on the available data.
+                                - Follow a logical troubleshooting progression: address foundational issues (like verifying interfaces) before considering higher-level problems (such as missing routes).
+
+                                """
+                            },
+                            {
+                                "role": "user",
+                                "content": f"Router Results: {show_results}, Latest Telemetry: {telemetry_result}, Previous RCA: {rca_history}"
+                            }
+                        ]
 
                 #print("Generating root cause analysis for Agentic insights..")
                 logging.info("Step 5. Generating root cause analysis for Agentic insights..")
-                response_rca = dochat.dochat(messages=messages,json=True)
+                model = "meta-llama/llama-3.3-70b-instruct"
+                response_rca = dochat.dochat(messages=messages,json=True, model=model)
                 #print("Response RCA : ")
                 logging.info("Response RCA : ")
                 #pprint(response_rca)

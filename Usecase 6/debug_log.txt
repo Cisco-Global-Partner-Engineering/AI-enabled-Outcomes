@@ -1,0 +1,31 @@
+
+
+
+Gateway>
+Gateway>terminal width 511
+Gateway>terminal length 0
+Gateway>
+Gateway>
+Gateway>
+Gateway>enable
+Password: 
+Gateway#
+Gateway#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Gateway(config)#
+Gateway(config)#interface Ethernet0/1
+Gateway(config-if)#
+Gateway(config-if)#no shutdown
+Gateway(config-if)#
+Gateway(config-if)#exit
+Gateway(config)#
+Gateway(config)#exit
+Gateway#
+Gateway#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+Ethernet0/0            172.16.110.1    YES manual up                    up      
+Ethernet0/1            172.16.110.5    YES manual up                    up      
+Ethernet0/2            192.168.250.2   YES NVRAM  up                    up      
+Ethernet0/3            198.18.128.111  YES NVRAM  up                    up      
+Gateway#
+Gateway#exit
