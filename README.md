@@ -6,7 +6,7 @@ AI enabled usecases available to Cisco's Partners
 ## License
 
 ```text
-Copyright (c) 2024 Cisco and/or its affiliates.
+Copyright (c) 2025 Cisco and/or its affiliates.
 This software is licensed to you under the terms of the Cisco Sample
 Code License, Version 1.1 (the "License"). You may obtain a copy of the
 License at
@@ -20,7 +20,7 @@ or implied.
 ```
 
 * **Author:** Joel Jose <joeljos@cisco.com>
-* **Copyright:** Copyright (c) 2024 Cisco and/or its affiliates.
+* **Copyright:** Copyright (c) 2025 Cisco and/or its affiliates.
 * **License:** Cisco Sample Code License, Version 1.1
 
 ## Usecases
