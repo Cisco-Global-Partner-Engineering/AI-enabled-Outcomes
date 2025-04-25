@@ -1,0 +1,13 @@
+[
+    {
+        "device": "branch-router",
+        "cli_cmd_branch-router": {
+            "branch-router": {
+                "configure terminal": "Enter configuration commands, one per line.  End with CNTL/Z.",
+                "interface GigabitEthernet0/1": "",
+                "no shutdown": "",
+                "exit": ""
+            }
+        }
+    }
+]

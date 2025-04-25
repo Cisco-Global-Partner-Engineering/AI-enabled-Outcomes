@@ -1,0 +1,62 @@
+{
+    "sudo ip addr": {
+        "output": "1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000\n    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n    inet 127.0.0.1/8 scope host lo\n       valid_lft forever preferred_lft forever\n    inet6 ::1/128 scope host \n       valid_lft forever preferred_lft forever\n2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:09:97:6d brd ff:ff:ff:ff:ff:ff\n    inet 10.0.2.10/24 scope global eth0\n       valid_lft forever preferred_lft forever\n    inet6 fe80::5054:ff:fe09:976d/64 scope link \n       valid_lft forever preferred_lft forever\n3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:08:c4:23 brd ff:ff:ff:ff:ff:ff\n    inet 198.18.1.111/24 brd 198.18.1.255 scope global eth1\n       valid_lft forever preferred_lft forever\n    inet6 fe80::5054:ff:fe08:c423/64 scope link \n       valid_lft forever preferred_lft forever",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "sudo ip link": {
+        "output": "1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000\n    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:09:97:6d brd ff:ff:ff:ff:ff:ff\n3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:08:c4:23 brd ff:ff:ff:ff:ff:ff",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "tail -n 50 /var/log/syslog": {
+        "output": "",
+        "error": "tail: can't open '/var/log/syslog': No such file or directory\ntail: no files",
+        "exit_status": 1,
+        "timeout": false
+    },
+    "sudo netstat -rn": {
+        "output": "Kernel IP routing table\nDestination     Gateway         Genmask         Flags   MSS Window  irtt Iface\n0.0.0.0         198.18.1.1      0.0.0.0         UG        0 0          0 eth1\n10.0.0.0        10.0.2.1        255.255.255.252 UG        0 0          0 eth0\n10.0.0.4        10.0.2.1        255.255.255.252 UG        0 0          0 eth0\n10.0.1.0        10.0.2.1        255.255.255.0   UG        0 0          0 eth0\n10.0.2.0        0.0.0.0         255.255.255.0   U         0 0          0 eth0\n10.0.3.0        10.0.2.1        255.255.255.0   UG        0 0          0 eth0\n10.0.4.0        10.0.2.1        255.255.255.0   UG        0 0          0 eth0\n10.0.255.0      10.0.2.1        255.255.255.0   UG        0 0          0 eth0\n10.1.0.0        10.0.2.1        255.255.255.252 UG        0 0          0 eth0\n198.18.1.0      0.0.0.0         255.255.255.0   U         0 0          0 eth1",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "sudo nft list ruleset": {
+        "output": "",
+        "error": "sudo: nft: command not found",
+        "exit_status": 1,
+        "timeout": false
+    },
+    "sudo iptables -L -n": {
+        "output": "",
+        "error": "sudo: iptables: command not found",
+        "exit_status": 1,
+        "timeout": false
+    },
+    "sudo ip route": {
+        "output": "default via 198.18.1.1 dev eth1 \n10.0.0.0/30 via 10.0.2.1 dev eth0 \n10.0.0.4/30 via 10.0.2.1 dev eth0 \n10.0.1.0/24 via 10.0.2.1 dev eth0 \n10.0.2.0/24 dev eth0 scope link  src 10.0.2.10 \n10.0.3.0/24 via 10.0.2.1 dev eth0 \n10.0.4.0/24 via 10.0.2.1 dev eth0 \n10.0.255.0/24 via 10.0.2.1 dev eth0 \n10.1.0.0/30 via 10.0.2.1 dev eth0 \n198.18.1.0/24 dev eth1 scope link  src 198.18.1.111",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "ping -c 5 10.0.2.1": {
+        "output": "PING 10.0.2.1 (10.0.2.1): 56 data bytes\n64 bytes from 10.0.2.1: seq=0 ttl=42 time=12.726 ms\n64 bytes from 10.0.2.1: seq=1 ttl=42 time=3.226 ms\n64 bytes from 10.0.2.1: seq=2 ttl=42 time=2.696 ms\n64 bytes from 10.0.2.1: seq=3 ttl=42 time=2.812 ms\n64 bytes from 10.0.2.1: seq=4 ttl=42 time=2.882 ms\n\n--- 10.0.2.1 ping statistics ---\n5 packets transmitted, 5 packets received, 0% packet loss\nround-trip min/avg/max = 2.696/4.868/12.726 ms",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "ping -c 5 10.0.3.10": {
+        "output": "PING 10.0.3.10 (10.0.3.10): 56 data bytes\n64 bytes from 10.0.3.10: seq=0 ttl=42 time=15.325 ms\n64 bytes from 10.0.3.10: seq=1 ttl=42 time=7.600 ms\n64 bytes from 10.0.3.10: seq=2 ttl=42 time=7.243 ms\n64 bytes from 10.0.3.10: seq=3 ttl=42 time=7.282 ms\n64 bytes from 10.0.3.10: seq=4 ttl=42 time=10.601 ms\n\n--- 10.0.3.10 ping statistics ---\n5 packets transmitted, 5 packets received, 0% packet loss\nround-trip min/avg/max = 7.243/9.610/15.325 ms",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "ping -c 5 10.1.0.2": {
+        "output": "PING 10.1.0.2 (10.1.0.2): 56 data bytes",
+        "error": "",
+        "exit_status": null,
+        "timeout": true
+    }
+}

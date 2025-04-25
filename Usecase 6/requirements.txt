@@ -1,0 +1,15 @@
+# Core dependencies
+rich>=10.0.0
+paramiko>=2.7.2  # For SSH connections
+netmiko>=3.4.0   # For network device connections
+
+# OpenAI integration
+openai>=1.0.0    # For OpenAI API access
+azure-openai>=1.0.0  # For Azure OpenAI integration
+ollama>=0.1.0    # For local LLM support
+
+# Networking tools
+concurrent-futures>=3.0.5  # For parallel execution (if not in standard library)
+
+# Security
+cryptography>=36.0.0  # Required by paramiko for key handling

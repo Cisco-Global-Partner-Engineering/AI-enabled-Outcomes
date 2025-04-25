@@ -1,0 +1,381 @@
+{
+  "l3_topology": {
+    "branch-router": {
+      "interfaces": {
+        "Loopback0": "10.0.255.1/32",
+        "GigabitEthernet0/1": "10.0.0.1/30",
+        "GigabitEthernet0/2": "10.1.0.1/30"
+      },
+      "routes": [
+        {"destination": "10.0.1.0/24", "next_hop": "10.0.0.2"},
+        {"destination": "10.0.2.0/24", "next_hop": "10.0.0.2"},
+        {"destination": "10.0.3.0/24", "next_hop": "10.0.0.2"},
+        {"destination": "10.0.4.0/24", "next_hop": "10.0.0.2"},
+        {"destination": "10.0.0.4/30", "next_hop": "10.0.0.2"}
+      ]
+    },
+    "branch-fw": {
+      "interfaces": {
+        "GigabitEthernet0/0": "10.0.0.2/30",
+        "GigabitEthernet0/1": "10.0.1.1/24"
+      },
+      "nameif (ifc_name)": {
+        "GigabitEthernet0/0": "outside",
+        "GigabitEthernet0/1": "inside"
+      },
+      "routes": [
+        {"destination": "10.0.2.0/24", "next_hop": "10.0.1.2"},
+        {"destination": "10.0.3.0/24", "next_hop": "10.0.1.3"},
+        {"destination": "10.0.4.0/24", "next_hop": "10.0.1.4"},
+        {"destination": "10.0.0.4/30", "next_hop": "10.0.1.4"},
+        {"destination": "10.0.255.0/24", "next_hop": "10.0.0.1"}
+      ]
+    },
+    "dmz-router": {
+      "interfaces": {
+        "Loopback0": "10.0.255.4/32",
+        "GigabitEthernet0/0": "10.0.1.4/24",
+        "GigabitEthernet0/1": "10.0.0.5/30"
+      },
+      "routes": [
+        {"destination": "10.0.0.0/30", "next_hop": "10.0.1.1"},
+        {"destination": "10.0.2.0/24", "next_hop": "10.0.1.2"},
+        {"destination": "10.0.3.0/24", "next_hop": "10.0.1.3"},
+        {"destination": "10.0.4.0/24", "next_hop": "10.0.0.6"},
+        {"destination": "10.0.255.1/32", "next_hop": "10.0.1.1"},
+        {"destination": "10.0.255.2/32", "next_hop": "10.0.1.2"},
+        {"destination": "10.0.255.3/32", "next_hop": "10.0.1.3"}
+      ]
+    },
+    "dmz-fw": {
+      "interfaces": {
+        "GigabitEthernet0/0": "10.0.0.6/30",
+        "GigabitEthernet0/1": "10.0.4.1/24"
+      },
+      "nameif (ifc_name)": {
+        "GigabitEthernet0/0": "dmz-transit",
+        "GigabitEthernet0/1": "inside"
+      },
+      "routes": [
+        {"destination": "10.0.0.0/30", "next_hop": "10.0.0.5"},
+        {"destination": "10.0.1.0/24", "next_hop": "10.0.0.5"},
+        {"destination": "10.0.2.0/24", "next_hop": "10.0.0.5"},
+        {"destination": "10.0.3.0/24", "next_hop": "10.0.0.5"},
+        {"destination": "10.0.255.0/24", "next_hop": "10.0.0.5"}
+      ]
+    },
+    "client1-router": {
+      "interfaces": {
+        "Loopback0": "10.0.255.2/32",
+        "GigabitEthernet0/0": "10.0.1.2/24",
+        "GigabitEthernet0/1": "10.0.2.1/24"
+      },
+      "routes": [
+        {"destination": "10.0.0.0/30", "next_hop": "10.0.1.1"},
+        {"destination": "10.0.3.0/24", "next_hop": "10.0.1.3"},
+        {"destination": "10.0.4.0/24", "next_hop": "10.0.1.4"},
+        {"destination": "10.0.0.4/30", "next_hop": "10.0.1.4"},
+        {"destination": "10.0.255.1/32", "next_hop": "10.0.1.1"},
+        {"destination": "10.0.255.3/32", "next_hop": "10.0.1.3"},
+        {"destination": "10.0.255.4/32", "next_hop": "10.0.1.4"}
+      ]
+    },
+    "client2-router": {
+      "interfaces": {
+        "Loopback0": "10.0.255.3/32",
+        "GigabitEthernet0/0": "10.0.3.1/24",
+        "GigabitEthernet0/1": "10.0.1.3/24"
+      },
+      "routes": [
+        {"destination": "10.0.0.0/30", "next_hop": "10.0.1.1"},
+        {"destination": "10.0.2.0/24", "next_hop": "10.0.1.2"},
+        {"destination": "10.0.4.0/24", "next_hop": "10.0.1.4"},
+        {"destination": "10.0.0.4/30", "next_hop": "10.0.1.4"},
+        {"destination": "10.0.255.1/32", "next_hop": "10.0.1.1"},
+        {"destination": "10.0.255.2/32", "next_hop": "10.0.1.2"},
+        {"destination": "10.0.255.4/32", "next_hop": "10.0.1.4"}
+      ]
+    },
+    "branch-switch": {
+      "type": "L2_device",
+      "interfaces": {
+        "GigabitEthernet0/0": "connected to GigabitEthernet0/1 of branch-fw",
+        "GigabitEthernet0/1": "connected to GigabitEthernet0/2 of client-switch",
+        "GigabitEthernet0/2": "connected to GigabitEthernet0/0 of dmz-router" 
+      }
+    },
+    "client1-switch": {
+      "type": "L2_device",
+      "interfaces": {
+        "GigabitEthernet0/0": "connected to Ethernet 0 of client1",
+        "GigabitEthernet0/1": "connected to GigabitEthernet0/1 of client1-router"
+      }
+    },
+    "client2-switch": {
+      "type": "L2_device",
+      "interfaces": {
+        "GigabitEthernet0/0": "connected to Ethernet 1 of client2",
+        "GigabitEthernet0/1": "connected to GigabitEthernet0/0 of client2-router"
+      }
+    },
+    "client-switch": {
+      "type": "L2_device",
+      "interfaces": {
+        "GigabitEthernet0/0": "connected to GigabitEthernet0/0 of client1-router",
+        "GigabitEthernet0/1": "connected to GigabitEthernet0/1 of client2-router",
+        "GigabitEthernet0/2": "connected to GigabitEthernet0/1 of branch-switch"
+      }
+    },
+    "server-switch": {
+      "type": "L2_device",
+      "interfaces": {
+        "GigabitEthernet0/1": "connected to Ethernet 0 of server",
+        "GigabitEthernet0/3": "connected to GigabitEthernet0/1 of dmz-fw"
+      }
+    },
+    "client1": {
+      "interfaces": {
+        "eth0": "10.0.2.10/24"
+      },
+      "routes": [
+        {"destination": "10.0.0.0/30", "next_hop": "10.0.2.1"},
+        {"destination": "10.0.1.0/24", "next_hop": "10.0.2.1"},
+        {"destination": "10.0.3.0/24", "next_hop": "10.0.2.1"},
+        {"destination": "10.0.4.0/24", "next_hop": "10.0.2.1"},
+        {"destination": "10.0.0.4/30", "next_hop": "10.0.2.1"},
+        {"destination": "10.0.255.0/24", "next_hop": "10.0.2.1"}
+      ]
+    },
+    "client2": {
+      "interfaces": {
+        "eth1": "10.0.3.10/24"
+      },
+      "routes": [
+        {"destination": "10.0.0.0/30", "next_hop": "10.0.3.1"},
+        {"destination": "10.0.1.0/24", "next_hop": "10.0.3.1"},
+        {"destination": "10.0.2.0/24", "next_hop": "10.0.3.1"},
+        {"destination": "10.0.4.0/24", "next_hop": "10.0.3.1"},
+        {"destination": "10.0.0.4/30", "next_hop": "10.0.3.1"},
+        {"destination": "10.0.255.0/24", "next_hop": "10.0.3.1"}
+      ]
+    },
+    "server": {
+      "interfaces": {
+        "eth0": "10.0.4.10/24"
+      },
+      "routes": [
+        {"destination": "10.0.0.0/30", "next_hop": "10.0.4.1"},
+        {"destination": "10.0.1.0/24", "next_hop": "10.0.4.1"},
+        {"destination": "10.0.2.0/24", "next_hop": "10.0.4.1"},
+        {"destination": "10.0.3.0/24", "next_hop": "10.0.4.1"},
+        {"destination": "10.0.0.4/30", "next_hop": "10.0.4.1"},
+        {"destination": "10.0.255.0/24", "next_hop": "10.0.4.1"}
+      ]
+    },
+    "remote-worker": {
+      "interfaces": {
+        "eth0": "10.1.0.2/30"
+      },
+      "routes": [
+        {"destination": "10.0.0.0/16", "next_hop": "10.1.0.1"}
+      ]
+    },
+    "subnets": {
+      "10.0.0.0/30": "branch-router to branch-fw link",
+      "10.0.0.4/30": "dmz-router to dmz-fw link",
+      "10.0.1.0/24": "shared transit subnet across switches",
+      "10.0.2.0/24": "client1 network",
+      "10.0.3.0/24": "client2 network",
+      "10.0.4.0/24": "server network",
+      "10.0.255.0/24": "loopback addresses",
+      "10.1.0.0/30": "branch-router to remote-worker link"
+    }
+  },
+  "linux_to_linux_traffic_flows": [
+    {
+      "flow_name": "client1_to_client2",
+      "source": "client1 (10.0.2.10)",
+      "destination": "client2 (10.0.3.10)",
+      "l3_path": [
+        "client1 (10.0.2.10)",
+        "client1-router (10.0.2.1)",
+        "client1-router (10.0.1.2)",
+        "client2-router (10.0.1.3)",
+        "client2-router (10.0.3.1)",
+        "client2 (10.0.3.10)"
+      ],
+      "l2_path": [
+        "client1",
+        "client1-switch (GigabitEthernet0/0)",
+        "client1-router (GigabitEthernet0/1)",
+        "client1-router (GigabitEthernet0/0)",
+        "client-switch (GigabitEthernet0/0)",
+        "client-switch (GigabitEthernet0/1)",
+        "client2-router (GigabitEthernet0/1)",
+        "client2-router (GigabitEthernet0/0)",
+        "client2-switch (GigabitEthernet0/1)",
+        "client2-switch (GigabitEthernet0/0)",
+        "client2"
+      ]
+    },
+    {
+      "flow_name": "client1_to_server",
+      "source": "client1 (10.0.2.10)",
+      "destination": "server (10.0.4.10)",
+      "l3_path": [
+        "client1 (10.0.2.10)",
+        "client1-router (10.0.2.1)",
+        "client1-router (10.0.1.2)",
+        "dmz-router (10.0.1.4)",
+        "dmz-router (10.0.0.5)",
+        "dmz-fw (10.0.0.6)",
+        "dmz-fw (10.0.4.1)",
+        "server (10.0.4.10)"
+      ],
+      "l2_path": [
+        "client1",
+        "client1-switch (GigabitEthernet0/0)",
+        "client1-router (GigabitEthernet0/1)",
+        "client1-router (GigabitEthernet0/0)",
+        "client-switch (GigabitEthernet0/0)",
+        "client-switch (GigabitEthernet0/2)",
+        "branch-switch (GigabitEthernet0/1)",
+        "branch-switch (GigabitEthernet0/2)",
+        "dmz-router (GigabitEthernet0/0)",
+        "dmz-router (GigabitEthernet0/1)",
+        "dmz-fw (GigabitEthernet0/0)",
+        "dmz-fw (GigabitEthernet0/1)",
+        "server-switch (GigabitEthernet0/3)",
+        "server-switch (GigabitEthernet0/1)",
+        "server"
+      ]
+    },
+    {
+      "flow_name": "client1_to_remote_worker",
+      "source": "client1 (10.0.2.10)",
+      "destination": "remote-worker (10.1.0.2)",
+      "l3_path": [
+        "client1 (10.0.2.10)",
+        "client1-router (10.0.2.1)",
+        "client1-router (10.0.1.2)",
+        "branch-fw (10.0.1.1)",
+        "branch-fw (10.0.0.2)",
+        "branch-router (10.0.0.1)",
+        "branch-router (10.1.0.1)",
+        "remote-worker (10.1.0.2)"
+      ],
+      "l2_path": [
+        "client1",
+        "client1-switch (GigabitEthernet0/0)",
+        "client1-router (GigabitEthernet0/1)",
+        "client1-router (GigabitEthernet0/0)",
+        "client-switch (GigabitEthernet0/0)",
+        "client-switch (GigabitEthernet0/2)",
+        "branch-switch (GigabitEthernet0/1)",
+        "branch-switch (GigabitEthernet0/0)",
+        "branch-fw (GigabitEthernet0/1)",
+        "branch-fw (GigabitEthernet0/0)",
+        "branch-router (GigabitEthernet0/1)",
+        "branch-router (GigabitEthernet0/2)",
+        "remote-worker"
+      ]
+    },
+    {
+      "flow_name": "client2_to_server",
+      "source": "client2 (10.0.3.10)",
+      "destination": "server (10.0.4.10)",
+      "l3_path": [
+        "client2 (10.0.3.10)",
+        "client2-router (10.0.3.1)",
+        "client2-router (10.0.1.3)",
+        "dmz-router (10.0.1.4)",
+        "dmz-router (10.0.0.5)",
+        "dmz-fw (10.0.0.6)",
+        "dmz-fw (10.0.4.1)",
+        "server (10.0.4.10)"
+      ],
+      "l2_path": [
+        "client2",
+        "client2-switch (GigabitEthernet0/0)",
+        "client2-router (GigabitEthernet0/0)",
+        "client2-router (GigabitEthernet0/1)",
+        "client-switch (GigabitEthernet0/1)",
+        "client-switch (GigabitEthernet0/2)",
+        "branch-switch (GigabitEthernet0/1)",
+        "branch-switch (GigabitEthernet0/2)",
+        "dmz-router (GigabitEthernet0/0)",
+        "dmz-router (GigabitEthernet0/1)",
+        "dmz-fw (GigabitEthernet0/0)",
+        "dmz-fw (GigabitEthernet0/1)",
+        "server-switch (GigabitEthernet0/3)",
+        "server-switch (GigabitEthernet0/1)",
+        "server"
+      ]
+    },
+    {
+      "flow_name": "client2_to_remote_worker",
+      "source": "client2 (10.0.3.10)",
+      "destination": "remote-worker (10.1.0.2)",
+      "l3_path": [
+        "client2 (10.0.3.10)",
+        "client2-router (10.0.3.1)",
+        "client2-router (10.0.1.3)",
+        "branch-fw (10.0.1.1)",
+        "branch-fw (10.0.0.2)",
+        "branch-router (10.0.0.1)",
+        "branch-router (10.1.0.1)",
+        "remote-worker (10.1.0.2)"
+      ],
+      "l2_path": [
+        "client2",
+        "client2-switch (GigabitEthernet0/0)",
+        "client2-router (GigabitEthernet0/0)",
+        "client2-router (GigabitEthernet0/1)",
+        "client-switch (GigabitEthernet0/1)",
+        "client-switch (GigabitEthernet0/2)",
+        "branch-switch (GigabitEthernet0/1)",
+        "branch-switch (GigabitEthernet0/0)",
+        "branch-fw (GigabitEthernet0/1)",
+        "branch-fw (GigabitEthernet0/0)",
+        "branch-router (GigabitEthernet0/1)",
+        "branch-router (GigabitEthernet0/2)",
+        "remote-worker"
+      ]
+    },
+    {
+      "flow_name": "server_to_remote_worker",
+      "source": "server (10.0.4.10)",
+      "destination": "remote-worker (10.1.0.2)",
+      "l3_path": [
+        "server (10.0.4.10)",
+        "dmz-fw (10.0.4.1)",
+        "dmz-fw (10.0.0.6)",
+        "dmz-router (10.0.0.5)",
+        "dmz-router (10.0.1.4)",
+        "branch-fw (10.0.1.1)",
+        "branch-fw (10.0.0.2)",
+        "branch-router (10.0.0.1)",
+        "branch-router (10.1.0.1)",
+        "remote-worker (10.1.0.2)"
+      ],
+      "l2_path": [
+        "server",
+        "server-switch (GigabitEthernet0/1)",
+        "server-switch (GigabitEthernet0/3)",
+        "dmz-fw (GigabitEthernet0/1)",
+        "dmz-fw (GigabitEthernet0/0)",
+        "dmz-router (GigabitEthernet0/1)",
+        "dmz-router (GigabitEthernet0/0)",
+        "branch-switch (GigabitEthernet0/2)",
+        "branch-switch (GigabitEthernet0/0)",
+        "branch-fw (GigabitEthernet0/1)",
+        "branch-fw (GigabitEthernet0/0)",
+        "branch-router (GigabitEthernet0/1)",
+        "branch-router (GigabitEthernet0/2)",
+        "remote-worker"
+      ]
+    }
+  ],
+  "Management_subnet (Ignore/leave_untouched in the configurations)": "198.18.1.0/24",
+  "Prefered routing protocol": "OSPF"
+}
