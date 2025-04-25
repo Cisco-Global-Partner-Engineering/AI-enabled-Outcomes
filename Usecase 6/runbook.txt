@@ -1,6 +1,0 @@
-Common guidelines:
-1) do not do traceroute from the routers and gateways
-2) "show ip interface brief" - is the command to be used in ios router for seeing the interface up/down status. Do not use this command on the ios as it does not exist 'show interfaces status'
-3) Make sure to check if the interfaces have the IPs as mentioned in the topology. Consider the topology to be the single source of truth for the IP addressing.
-4) Make sure to verify the ip routes after any network change is performed
-5) Do only a single network change
