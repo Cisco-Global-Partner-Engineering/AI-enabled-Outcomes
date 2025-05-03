@@ -1,0 +1,56 @@
+{
+    "sudo ip addr": {
+        "output": "1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000\n    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n    inet 127.0.0.1/8 scope host lo\n       valid_lft forever preferred_lft forever\n    inet6 ::1/128 scope host \n       valid_lft forever preferred_lft forever\n2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:00:1c:e4 brd ff:ff:ff:ff:ff:ff\n    inet 10.0.1.2/24 brd 10.0.1.255 scope global eth0\n       valid_lft forever preferred_lft forever\n    inet6 fe80::5054:ff:fe00:1ce4/64 scope link \n       valid_lft forever preferred_lft forever\n3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:15:82:78 brd ff:ff:ff:ff:ff:ff\n    inet 198.18.1.113/24 brd 198.18.1.255 scope global eth1\n       valid_lft forever preferred_lft forever\n    inet6 fe80::5054:ff:fe15:8278/64 scope link \n       valid_lft forever preferred_lft forever",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "sudo ip route": {
+        "output": "default via 198.18.1.1 dev eth1 \n10.0.0.0/30 via 10.0.1.1 dev eth0 \n10.0.0.4/30 via 10.0.1.1 dev eth0 \n10.0.1.0/24 dev eth0 scope link  src 10.0.1.2 \n10.0.2.0/24 via 10.0.1.1 dev eth0 \n10.0.3.0/24 via 10.0.1.1 dev eth0 \n10.0.4.0/24 via 10.0.1.1 dev eth0 \n10.0.255.0/24 via 10.0.1.1 dev eth0 \n10.1.0.0/30 via 10.0.1.1 dev eth0 \n198.18.1.0/24 dev eth1 scope link  src 198.18.1.113",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "sudo iptables -L -n": {
+        "output": "",
+        "error": "sudo: iptables: command not found",
+        "exit_status": 1,
+        "timeout": false
+    },
+    "tail -n 50 /var/log/syslog": {
+        "output": "",
+        "error": "tail: can't open '/var/log/syslog': No such file or directory\ntail: no files",
+        "exit_status": 1,
+        "timeout": false
+    },
+    "sudo netstat -rn": {
+        "output": "Kernel IP routing table\nDestination     Gateway         Genmask         Flags   MSS Window  irtt Iface\n0.0.0.0         198.18.1.1      0.0.0.0         UG        0 0          0 eth1\n10.0.0.0        10.0.1.1        255.255.255.252 UG        0 0          0 eth0\n10.0.0.4        10.0.1.1        255.255.255.252 UG        0 0          0 eth0\n10.0.1.0        0.0.0.0         255.255.255.0   U         0 0          0 eth0\n10.0.2.0        10.0.1.1        255.255.255.0   UG        0 0          0 eth0\n10.0.3.0        10.0.1.1        255.255.255.0   UG        0 0          0 eth0\n10.0.4.0        10.0.1.1        255.255.255.0   UG        0 0          0 eth0\n10.0.255.0      10.0.1.1        255.255.255.0   UG        0 0          0 eth0\n10.1.0.0        10.0.1.1        255.255.255.252 UG        0 0          0 eth0\n198.18.1.0      0.0.0.0         255.255.255.0   U         0 0          0 eth1",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "sudo nft list ruleset": {
+        "output": "",
+        "error": "sudo: nft: command not found",
+        "exit_status": 1,
+        "timeout": false
+    },
+    "sudo ip link": {
+        "output": "1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000\n    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:00:1c:e4 brd ff:ff:ff:ff:ff:ff\n3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:15:82:78 brd ff:ff:ff:ff:ff:ff",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "ping -c 5 10.0.1.1": {
+        "output": "PING 10.0.1.1 (10.0.1.1): 56 data bytes\n64 bytes from 10.0.1.1: seq=0 ttl=42 time=1.831 ms\n64 bytes from 10.0.1.1: seq=1 ttl=42 time=1.254 ms\n64 bytes from 10.0.1.1: seq=2 ttl=42 time=1.069 ms\n64 bytes from 10.0.1.1: seq=3 ttl=42 time=0.915 ms\n64 bytes from 10.0.1.1: seq=4 ttl=42 time=1.128 ms\n\n--- 10.0.1.1 ping statistics ---\n5 packets transmitted, 5 packets received, 0% packet loss\nround-trip min/avg/max = 0.915/1.239/1.831 ms",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "traceroute -m 15 10.0.1.1": {
+        "output": "traceroute to 10.0.1.1 (10.0.1.1), 15 hops max, 46 byte packets\n 1  *  *",
+        "error": "",
+        "exit_status": null,
+        "timeout": true
+    }
+}

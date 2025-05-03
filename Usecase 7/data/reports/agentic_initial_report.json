@@ -1,0 +1,16 @@
+{
+    "Alarms": [
+        {
+            "Alarm Summary": "All ping tests succeeded with 0% packet loss; network connectivity is healthy.",
+            "Device Family": "Servers",
+            "Recommended Actions": "No action required. All pings were successful with 0% packet loss.",
+            "Tracking Next Steps": "Continue to monitor network connectivity by performing periodic ping tests from both the server and remote-worker. If packet loss or increased latency is observed in future tests, escalate the issue to the network operations team for further investigation.",
+            "Alarm Details": "[{'alarm': 'ping from server', 'Alarm Details': \"PING 10.1.0.2 (10.1.0.2): 56 data bytes\\n64 bytes from 10.1.0.2: seq=0 ttl=42 time=2.728 ms\\n64 bytes from 10.1.0.2: seq=1 ttl=42 time=2.342 ms\\n64 bytes from 10.1.0.2: seq=2 ttl=42 time=3.708 ms\\n64 bytes from 10.1.0.2: seq=3 ttl=42 time=2.750 ms\\n\\n--- 10.1.0.2 ping statistics ---\\n4 packets transmitted, 4 packets received, 0% packet loss\\nround-trip min/avg/max = 2.342/2.882/3.708 ms\\n\"}, {'alarm': 'ping from remote-worker', 'Alarm Details': \"PING 10.0.1.2 (10.0.1.2): 56 data bytes\\n64 bytes from 10.0.1.2: seq=0 ttl=42 time=1.897 ms\\n64 bytes from 10.0.1.2: seq=1 ttl=42 time=1.313 ms\\n64 bytes from 10.0.1.2: seq=2 ttl=42 time=3.016 ms\\n64 bytes from 10.0.1.2: seq=3 ttl=42 time=1.914 ms\\n\\n--- 10.0.1.2 ping statistics ---\\n4 packets transmitted, 4 packets received, 0% packet loss\\nround-trip min/avg/max = 1.313/2.035/3.016 ms\\n\"}]",
+            "Insights": "Both alarms show successful pings with 0% packet loss and low latency, indicating normal network connectivity. No issues detected.\n\nInsights: none",
+            "Priority": "Normal",
+            "Status": "Resolved",
+            "Alarm Source": "Ping Result",
+            "Alarm ID": "Ping Result 1"
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{  
+  "links": [  
+    {  
+      "subnet": "10.0.0.0/30",  
+      "endpoints": [  
+        {  
+          "node": "branch-router",  
+          "interface": "GigabitEthernet0/1",  
+          "ip": "10.0.0.1/30"  
+        },  
+        {  
+          "node": "branch-fw",  
+          "interface": "GigabitEthernet0/0",  
+          "ip": "10.0.0.2/30",
+          "nameif": "outside"
+        }  
+      ]  
+    },  
+    {  
+      "subnet": "10.0.1.0/24",  
+      "endpoints": [  
+        {  
+          "node": "branch-fw",  
+          "interface": "GigabitEthernet0/1",  
+          "ip": "10.0.1.1/24",
+          "nameif": "inside"
+        },  
+        {  
+          "node": "server",  
+          "interface": "eth0",  
+          "ip": "10.0.1.2/24"  
+        }  
+      ]  
+    },  
+    {  
+      "subnet": "10.1.0.0/30",  
+      "endpoints": [  
+        {  
+          "node": "branch-router",  
+          "interface": "GigabitEthernet0/2",  
+          "ip": "10.1.0.1/30"  
+        },  
+        {  
+          "node": "remote-worker",  
+          "interface": "eth0",  
+          "ip": "10.1.0.2/30"  
+        }  
+      ]  
+    }  
+  ]  
+}  

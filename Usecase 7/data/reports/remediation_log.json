@@ -1,0 +1,6 @@
+[
+    {
+        "device": "branch-fw",
+        "cli_cmd_branch-fw": " configure terminal\nbranch-fw(config)#  configure terminal\nbranch-fw(config)# object network OBJ_INSIDE\nbranch-fw(config-network-object)# no nat (inside,outside) dynamic interface\nERROR: NAT configuration not found for object OBJ_INSIDE\nbranch-fw(config-network-object)# nat (inside,outside) source static 10.0.1.0 10.0.1.0 destination static 10.1.0.0 10.1.0.0 no-proxy-arp route-lookup\nERROR: 10.0.1.0 doesn't match an existing object or object-group\nbranch-fw(config)# exit\nbranch-fw# end\n            ^\nERROR: % Invalid input detected at '^' marker.\nbranch-fw# "
+    }
+]
