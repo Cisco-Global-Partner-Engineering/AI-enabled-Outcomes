@@ -58,7 +58,7 @@ git clone https://github.com/Cisco-Global-Partner-Engineering/AI-enabled-Outcome
 4. Navigate into the cloned repository:
 
 ```
-cd AI-enabled-Outcomes
+cd "AI-enabled-Outcomes/Usecase 7"
 ```
 
 ### Step 3: Obtain LLM API Keys
