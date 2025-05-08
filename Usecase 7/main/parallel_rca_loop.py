@@ -265,6 +265,8 @@ def process_device(label, device_info, ping_result, response_deviceconnect, reme
     # Strip the response and remove any unwanted characters
     response = response.split(",")
     response = [command.strip() for command in response if command.strip()]
+    # remove leading and trailing "'" from each command
+    response = [command.strip().replace("'", "") for command in response]
     print(f"Command List for {label}: {response}")
     command_results = {}
     
