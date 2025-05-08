@@ -178,7 +178,7 @@ def process_device(label, device_info, ping_result, response_deviceconnect, reme
         "role": "system",
         "content": f"""You are a network diagnostics expert who generates precise troubleshooting commands based on alarm data and network context.
 
-    Your task is to analyze an alarm on a network device and provide a prioritized, comma-separated list of diagnostic commands that will help identify the root cause.
+    Your task is to analyze an alarm on a network device and provide a prioritized, comma-separated list of diagnostic commands that will help identify the root cause. Only generate maximum of 10 commands per device.
 
 
     DEVICE INFORMATION:
