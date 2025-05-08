@@ -309,7 +309,7 @@ def dochat_gemini(prompt="", messages=[], json_mode=False, temperature=0.1, mode
         raise
 
 
-def dochat(prompt="",messages=[],json=False, model = None, temperature=0.1, llm="openrouter"):
+def dochat(prompt="",messages=[],json=False, model = None, temperature=0.1, llm="gemini"):
     if llm == "openrouter":
         try:
             result = dochat_openrouter(prompt, messages, json, model, temperature)
