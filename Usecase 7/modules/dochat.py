@@ -26,6 +26,7 @@ import ollama
 import time
 import logging
 import google.generativeai as genai # Added for Gemini
+from google.api_core.exceptions import ResourceExhausted # Added for Gemini rate limit handling
 # Get the same logger
 logger = logging.getLogger(__name__)
 
@@ -233,11 +234,14 @@ def dochat_ollama(prompt="",messages=[],json=False):
         return chat_completion["message"]["content"]
 
 
-def dochat_gemini(prompt="", messages=[], json_mode=False, temperature=0.1, model="gemini-1.5-flash-latest"):
+def dochat_gemini(prompt="", messages=[], json_mode=False, temperature=0.1, model="gemini-2.0-flash-lite"):
     """
     Sends a request to the Gemini API and returns the response.
+    Implements retry logic for rate limit errors.
     """
     logging.info(f"Sending the prompt to the Gemini model: {model}")
+    max_retries = 3
+    retry_delay = 30  # seconds
 
     try:
         genai.configure(api_key=credentials.gemini_key)
@@ -251,63 +255,50 @@ def dochat_gemini(prompt="", messages=[], json_mode=False, temperature=0.1, mode
             {"role": "user", "content": prompt}
         ]
 
-    # Prepare messages for the new API format if necessary
-    # The new API expects a list of content parts, not a direct 'messages' list in generate_content
-    # For simplicity, we'll adapt the existing 'messages' structure.
-    # System prompt needs to be handled differently or incorporated into the user message.
-    # For now, let's assume the last user message is the primary prompt.
-    
-    # Extract the actual prompt content from the messages list
-    # This is a simplified approach; more complex logic might be needed for multi-turn conversations
     prompt_content = ""
     if messages:
-        # Find the last user message
         for msg in reversed(messages):
             if msg.get("role") == "user":
                 prompt_content = msg.get("content", "")
                 break
-        if not prompt_content and messages[0].get("role") == "system" and len(messages) > 1 and messages[1].get("role") == "user": # Handle simple system + user
+        if not prompt_content and messages[0].get("role") == "system" and len(messages) > 1 and messages[1].get("role") == "user":
              prompt_content = messages[0].get("content","") + "\n\n" + messages[1].get("content","")
-        elif not prompt_content: # Fallback if no user message found, use the whole prompt string if available
+        elif not prompt_content:
             prompt_content = prompt
 
+    for attempt in range(max_retries):
+        try:
+            gemini_model_instance = genai.GenerativeModel(model)
+            generation_config = genai.types.GenerationConfig(
+                temperature=temperature,
+            )
 
-    try:
-        # Get the generative model
-        gemini_model_instance = genai.GenerativeModel(model)
-        
-        # Create generation config
-        generation_config = genai.types.GenerationConfig(
-            temperature=temperature,
-            # The API might not directly support a 'json_mode' in generation_config in the same way.
-            # For JSON output, it's often managed by instructing the model in the prompt
-            # or by specific model versions tuned for JSON.
-            # If json_mode is True, we ensure the prompt requests JSON.
-        )
+            final_prompt_content = prompt_content
+            if json_mode and "json" not in final_prompt_content.lower():
+                final_prompt_content += "\nRespond in JSON format."
 
-        # Adjust prompt if JSON mode is requested
-        final_prompt_content = prompt_content
-        if json_mode and "json" not in final_prompt_content.lower(): # Basic check
-            final_prompt_content += "\nRespond in JSON format."
+            response = gemini_model_instance.generate_content(
+                final_prompt_content,
+                generation_config=generation_config,
+            )
 
+            if json_mode:
+                return process_llm_output(response.text)
+            else:
+                return response.text
 
-        response = gemini_model_instance.generate_content(
-            final_prompt_content, # Send the prepared prompt content
-            generation_config=generation_config,
-            # The 'messages' parameter is not used directly here as in OpenAI's API.
-            # The conversation history needs to be formatted into the 'prompt_content'.
-        )
-
-        if json_mode:
-            # Ensure response.text is used as process_llm_output expects a string
-            return process_llm_output(response.text)
-        else:
-            return response.text
-
-    except Exception as e:
-        logging.error(f"Error during Gemini API call: {e}")
-        raise
-
+        except ResourceExhausted as e:
+            logging.warning(f"Gemini API rate limit exceeded. Attempt {attempt + 1} of {max_retries}. Retrying in {retry_delay} seconds. Error: {e}")
+            if attempt < max_retries - 1:
+                time.sleep(retry_delay)
+                retry_delay *= 2  # Exponential backoff
+            else:
+                logging.error("Max retries reached for Gemini API rate limit.")
+                raise  # Re-raise the exception if all retries fail
+        except Exception as e:
+            logging.error(f"Error during Gemini API call: {e}")
+            raise
+    return None # Should not be reached if retries are handled correctly
 
 def dochat(prompt="",messages=[],json=False, model = None, temperature=0.1, llm="gemini"):
     if llm == "openrouter":
@@ -351,27 +342,18 @@ def dochat(prompt="",messages=[],json=False, model = None, temperature=0.1, llm=
             return dochat_ollama(prompt, messages, json)
     elif llm == "gemini":
         try:
-            # Pass the model parameter to dochat_gemini if provided, otherwise it uses its default
-            gemini_model = model if model else "gemma-3-27b-it" # or let dochat_gemini handle default
+            gemini_model = model if model else "gemini-1.5-flash-latest" # Updated default model
             result = dochat_gemini(prompt=prompt, messages=messages, json_mode=json, temperature=temperature, model=gemini_model)
             if result:
                 return result
             else:
-                # dochat_gemini might raise an error or return None/empty on failure
                 raise ValueError("No response from the Gemini model or content blocked.")
+        except ResourceExhausted as e: # Catch ResourceExhausted specifically
+            logging.error(f"Gemini API rate limit error after retries in dochat_gemini: {e}")
+            return f"Error: Gemini API rate limit exceeded after multiple retries: {e}"
         except Exception as e:
-            logging.error(f"Error with Gemini in dochat: {e}, attempting retry if applicable or failing.")
-            # Basic retry, you might want to add a delay like in other handlers
-            # For simplicity, direct retry here. Consider more sophisticated retry logic if needed.
-            # Adding a small delay before retry
-            time.sleep(5)
-            logging.info("Retrying Gemini call...")
-            try:
-                gemini_model = model if model else "gemini-1.5-flash-latest"
-                return dochat_gemini(prompt=prompt, messages=messages, json_mode=json, temperature=temperature, model=gemini_model)
-            except Exception as e_retry:
-                logging.error(f"Retry with Gemini also failed: {e_retry}")
-                return f"Error: Gemini call failed after retry: {e_retry}"
+            logging.error(f"Error with Gemini in dochat: {e}")
+            return f"Error: Gemini call failed: {e}"
     else:
         logging.error("Invalid LLM model")
         return None
