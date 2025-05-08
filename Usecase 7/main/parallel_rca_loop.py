@@ -146,7 +146,7 @@ def generate_insight(device_name, command, result, device_info, dochat, ping_res
     # Insight generation
     #llm="azuregpt41"
 
-    response = dochat.dochat(messages=messages, json=False,llm="azuregpt41")
+    response = dochat.dochat(messages=messages, json=False)
     insights = response.strip()
     print(f"\nInsights for device {device_info['name']} command '{command}': \n\n {insights} \n\n")
     return insights
@@ -571,7 +571,7 @@ def find_rca(response_deviceconnect, remediation_results=None):
     
     # RCA analysis
     #llm="azuregpt41"
-    response = dochat.dochat(messages=messages, json=False,llm="azuregpt41")
+    response = dochat.dochat(messages=messages, json=False)
     print(f"RCA : \n\n")
     print_md(response)
     print(f"\n\n")
