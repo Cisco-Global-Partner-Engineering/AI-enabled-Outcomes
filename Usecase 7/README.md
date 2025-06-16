@@ -24,6 +24,8 @@ __license__ = "Cisco Sample Code License, Version 1.1"
 
 Agentic AI for Operations is an advanced network monitoring and troubleshooting system that leverages AI to automate the detection, analysis, and remediation of network issues. This solution combines telemetry collection, intelligent analysis, and automated remediation to minimize network downtime and reduce the need for manual intervention.
 
+### DEMO : https://app.vidcast.io/share/1d9f75e5-2c34-4344-a161-cd2a993d8063
+
 ## Project Architecture
 
 The project is structured as follows:
