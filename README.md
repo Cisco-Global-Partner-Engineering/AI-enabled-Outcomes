@@ -35,6 +35,7 @@ or implied.
 
 ### Usecase 5: Advanced Cost-effective RAG for Enterprise
 
-### Usecase 6: Agentic AI for Operations
-
+### Usecase 6: Agentic AI for Operations : DEMO : https://app.vidcast.io/share/1d9f75e5-2c34-4344-a161-cd2a993d8063
 An advanced Agentic AI system that leverages AI to automate network monitoring, detection, analysis, and remediation, minimizing downtime and reducing manual intervention.
+
+
