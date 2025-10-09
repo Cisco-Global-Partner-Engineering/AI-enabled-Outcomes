@@ -32,6 +32,12 @@ No advanced programming or networking skills are required - this guide explains 
 
 ## Detailed Lab Instructions
 
+### Step 0: Create a new virtual environment where we can update libraries and dependencies
+
+1. python -m venv venv
+2. Activate the new virtual environment: source venv/bin/actívate
+3. Go to the Usecase 7 folder and look for the requirements.txt file. Run the following commands : pip install -r requirements.txt, pip install --upgrade pip (if any module is required)
+
 ### Step 1: Book the Cisco dCloud Lab Environment
 
 1. Go to the dCloud catalog: https://dcloud2.cisco.com/content/catalogue
