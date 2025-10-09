@@ -106,8 +106,9 @@ Alternatively, you can use other equivalent LLM services after making sure to ad
      2) In config mode : ip ssh version 2
      
    ASA :
-     1) Set new password for the 1st time (if asked). Use same password as in the credentials file
+     1) Set new password for the 1st time (if asked). Set password as cisco124
      2) In config mode : crypto key generate rsa modulus 4096
+     3) username cisco password cisco124 privilege 15
 
 ### Step 6: Test SSH Connectivity to Lab Devices
 
