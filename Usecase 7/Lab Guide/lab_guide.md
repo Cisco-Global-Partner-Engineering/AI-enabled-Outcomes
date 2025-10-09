@@ -109,7 +109,7 @@ Alternatively, you can use other equivalent LLM services after making sure to ad
      
       ASA : 
       1) In config mode : crypto key generate rsa modulus 4096
-      Then login to asa via ssh from the host and set new password for the 1st time.. use same password as in the credentials file.
+      2) Then login to asa via ssh from the host and set new password for the 1st time.. use same password as in the credentials file.
 
 ### Step 6: Test SSH Connectivity to Lab Devices
 
