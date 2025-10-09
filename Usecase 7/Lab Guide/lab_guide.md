@@ -63,13 +63,11 @@ cd "AI-enabled-Outcomes/Usecase 7"
 
 ### Step 3: Obtain LLM API Keys
 
-This lab uses a Large Language Model (LLM) to power the AI agent. The recommended option is GPT-4-1 from OpenAI.
+This lab uses a Large Language Model (LLM) to power the AI agent. Recommended to use a frontier model.
 
-1. Go to https://platform.openai.com/
-2. Sign up or log in to your OpenAI account
-3. Navigate to the API section
-4. Create a new API key
-5. Copy the API key and enter it in 'azure_openai_gpt41_token' in the modules/credentials.py file.
+1. Go to https://aistudio.google.com/api-keys
+2. Create a new API key
+3. Copy the API key and enter it in 'google_api_key' in the modules/credentials.py file.
 
 Alternatively, you can use other equivalent LLM services after making sure to adjust the code accordingly in the credentials.py and dochat.py files.
 
