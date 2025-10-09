@@ -100,14 +100,14 @@ Alternatively, you can use other equivalent LLM services after making sure to ad
    - Open the file `data/input/topology.png` in your cloned repository
    - Compare it with the topology displayed in CML
    - They should look similar, with various network devices connected to each other
-   - use the below configs as needed for the nodes to come up
-      IOS : 
+   - use the below configs as needed for the nodes to come up. Go to the console (right click on node) in the CML for each of the router and firewall nodes.
+   IOS : 
      1) In config mode : crypto key generate rsa (and then generate key of 4096 bits)
      2) In config mode : ip ssh version 2
      
-      ASA : 
-      1) In config mode : crypto key generate rsa modulus 4096
-      2) Then login to asa via ssh from the host and set new password for the 1st time.. use same password as in the credentials file.
+   ASA :
+     0) Set new password for the 1st time (if asked). Use same password as in the credentials file
+     1) In config mode : crypto key generate rsa modulus 4096
 
 ### Step 6: Test SSH Connectivity to Lab Devices
 
