@@ -23,10 +23,9 @@ nodes:
     configuration: |-
       Building configuration...
 
-
-      Current configuration : 3394 bytes
+      Current configuration : 3414 bytes
       !
-      ! Last configuration change at 10:42:36 UTC Fri May 2 2025
+      ! Last configuration change at 08:03:20 UTC Thu Oct 9 2025
       !
       version 15.9
       service timestamps debug datetime msec
@@ -121,6 +120,7 @@ nodes:
       no ip http server
       no ip http secure-server
       ip route 0.0.0.0 0.0.0.0 198.18.1.1
+      ip ssh version 2
       !
       ipv6 ioam timestamp
       !
@@ -128,7 +128,7 @@ nodes:
       !
       control-plane
       !
-      banner exec ^C
+      banner exec ^CC
       **************************************************************************
       * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
       * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -137,7 +137,7 @@ nodes:
       * purposes is expressly prohibited except as otherwise authorized by     *
       * Cisco in writing.                                                      *
       **************************************************************************^C
-      banner incoming ^C
+      banner incoming ^CC
       **************************************************************************
       * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
       * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -146,7 +146,7 @@ nodes:
       * purposes is expressly prohibited except as otherwise authorized by     *
       * Cisco in writing.                                                      *
       **************************************************************************^C
-      banner login ^C
+      banner login ^CC
       **************************************************************************
       * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
       * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -200,7 +200,7 @@ nodes:
       : Saved
 
       :
-      : Serial Number: 9A27VNPHXDG
+      : Serial Number: 9A8MV77SU0N
       : Hardware:   ASAv, 2048 MB RAM, CPU Pentium II 2700 MHz
       :
       ASA Version 9.18(2)
@@ -258,24 +258,17 @@ nodes:
       no object-group-search access-control
       object network OBJ_INSIDE
        subnet 10.0.1.0 255.255.255.0
+      object network OBJ_INSIDE_10_0_1_0
+       subnet 10.0.1.0 255.255.255.0
+      object network OBJ_REMOTE_10_1_0_0_30
+       subnet 10.1.0.0 255.255.255.252
       access-group ALLOW_INTERSUBNET in interface outside
       access-group ALLOW_INTERSUBNET in interface inside
-      access-list ALLOW_INTERSUBNET extended permit ip 10.0.2.0 255.255.255.0 10.1.0.0 255.255.255.252
-      access-list ALLOW_INTERSUBNET extended permit ip 10.0.2.0 255.255.255.0 10.0.3.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET extended permit ip 10.0.3.0 255.255.255.0 10.1.0.0 255.255.255.252
-      access-list ALLOW_INTERSUBNET extended permit ip 10.0.4.0 255.255.255.0 10.1.0.0 255.255.255.252
-      access-list ALLOW_INTERSUBNET extended permit ip 10.1.0.0 255.255.255.252 10.0.2.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET extended permit ip 10.1.0.0 255.255.255.252 10.0.3.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET extended permit ip 10.1.0.0 255.255.255.252 10.0.4.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET extended permit ip 10.0.3.0 255.255.255.0 10.0.2.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET extended permit ip 10.0.2.0 255.255.255.0 10.0.4.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET extended permit ip 10.0.4.0 255.255.255.0 10.0.2.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET extended permit ip 10.0.3.0 255.255.255.0 10.0.4.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET extended permit ip 10.0.4.0 255.255.255.0 10.0.3.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET_OUT extended permit ip 10.1.0.0 255.255.255.252 10.0.2.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET_OUT extended permit ip 10.1.0.0 255.255.255.252 10.0.3.0 255.255.255.0
-      access-list ALLOW_INTERSUBNET_OUT extended permit ip 10.1.0.0 255.255.255.252 10.0.4.0 255.255.255.0
+      access-list ALLOW_INTERSUBNET extended permit ip any any
+      access-list ALLOW_INTERSUBNET_OUT extended permit ip any any
       pager lines 23
+      logging enable
+      logging buffered warnings
       mtu outside 1500
       mtu inside 1500
       mtu management 1500
@@ -288,8 +281,6 @@ nodes:
       no arp permit-nonconnected
       arp rate-limit 8192
       !
-      object network OBJ_INSIDE
-       nat (inside,outside) dynamic interface
       router ospf 1
        network 10.0.0.0 255.255.255.252 area 0
        network 10.0.1.0 255.255.255.0 area 0
@@ -437,28 +428,33 @@ nodes:
        match default-inspection-traffic
       !
       !
-      policy-map type inspect dns migrated_dns_map_1
+      policy-map type inspect dns preset_dns_map
        parameters
         message-length maximum client auto
         message-length maximum 512
         no tcp-inspection
       policy-map global_policy
        class inspection_default
-        inspect dns migrated_dns_map_1
+        inspect ip-options
+        inspect netbios
+        inspect rtsp
+        inspect sunrpc
+        inspect tftp
+        inspect dns preset_dns_map
         inspect ftp
         inspect h323 h225
         inspect h323 ras
-        inspect ip-options
-        inspect netbios
         inspect rsh
-        inspect rtsp
-        inspect skinny
         inspect esmtp
         inspect sqlnet
-        inspect sunrpc
-        inspect tftp
         inspect sip
+        inspect skinny
       policy-map type inspect dns migrated_dns_map_2
+       parameters
+        message-length maximum client auto
+        message-length maximum 512
+        no tcp-inspection
+      policy-map type inspect dns migrated_dns_map_1
        parameters
         message-length maximum client auto
         message-length maximum 512
@@ -466,7 +462,7 @@ nodes:
       !
       service-policy global_policy global
       prompt hostname context
-      call-home reporting anonymous prompt 2
+      call-home reporting anonymous prompt 1
       call-home
        profile License
         destination address http https://tools.cisco.com/its/service/oddce/services/DDCEService
@@ -481,7 +477,7 @@ nodes:
         subscribe-to-alert-group inventory periodic monthly
         subscribe-to-alert-group configuration periodic monthly
         subscribe-to-alert-group telemetry periodic daily
-      Cryptochecksum:a6b9f499eaf1f8ef32fb88323e0a3eff
+      Cryptochecksum:63daeff22253cb44f0c3c797fc4548fa
       : end
     cpu_limit: null
     cpus: null
@@ -525,7 +521,7 @@ nodes:
         slot: 6
         type: physical
   - boot_disk_size: null
-    configuration: ums-f2801576-47
+    configuration: ums-2d7cdc1b-ac
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -709,7 +705,7 @@ nodes:
     ram: null
     tags: []
     x: -2000
-    y: 40
+    y: 0
     interfaces:
       - id: i0
         label: eth0

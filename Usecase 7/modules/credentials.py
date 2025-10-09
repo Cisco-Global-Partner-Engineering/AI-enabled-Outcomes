@@ -1,10 +1,5 @@
-
-azure_openai_gpt41_token = ""
-azure_openai_gpto4mini_token = ""
-webex_access_token = ""
-websearchkey=""
-openrouter_key = ""
-azure_endpoint=""
+google_api_key=""
+openai_api_key=""
 
 
 #################################

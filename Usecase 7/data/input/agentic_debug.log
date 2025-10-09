@@ -1,0 +1,843 @@
+2025-10-09 08:53:37,491 - INFO - Starting telemetry.py
+2025-10-09 08:53:37,681 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:53:37,682 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:53:38,828 - INFO - Authentication (publickey) failed.
+2025-10-09 08:53:38,828 - INFO - Authentication (publickey) failed.
+2025-10-09 08:53:39,022 - INFO - Authentication (password) successful!
+2025-10-09 08:53:39,022 - INFO - Authentication (password) successful!
+2025-10-09 08:53:52,403 - INFO - Completed telemetry.py
+2025-10-09 08:53:52,404 - INFO - Length of Alarms : 
+2025-10-09 08:53:52,405 - INFO - 1
+2025-10-09 08:53:52,405 - INFO - Step 1 : Generating initial Agentic report for current alarms..
+2025-10-09 08:53:52,409 - INFO - Processing Key: Alarm Summary: A concise description of the alarm summarizing the issue
+2025-10-09 08:53:52,409 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:53:52,506 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:54:01,699 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:54:01,701 - INFO - AFC remote call 1 is done.
+2025-10-09 08:54:01,702 - INFO - Processing Key: Device Family: The category or type of device impacted (e.g., Switches, Routers)
+2025-10-09 08:54:01,702 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:54:01,726 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:54:09,090 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:54:09,095 - INFO - AFC remote call 1 is done.
+2025-10-09 08:54:09,098 - INFO - Processing Key: Recommended Actions: A list of actionable steps to resolve or mitigate the issue. Each action should be clear, specific, and actionable, such as relevant Cisco CLI commands, configuration steps, or administrative tasks
+2025-10-09 08:54:09,100 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:54:09,125 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:54:31,213 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:54:31,217 - INFO - AFC remote call 1 is done.
+2025-10-09 08:54:31,218 - INFO - Processing Key: Tracking Next Steps: Instructions on how to monitor the issue after performing the recommended actions and what steps to take if the problem persists, including escalation guidance if necessary
+2025-10-09 08:54:31,218 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:54:31,238 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:54:31,295 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:54:31,296 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:54:41,297 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:54:50,754 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:54:50,755 - INFO - AFC remote call 1 is done.
+2025-10-09 08:54:50,755 - INFO - Processing Key: Alarm Details: All other details as available in the alarm data. If none, state 'none'
+2025-10-09 08:54:50,755 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:54:50,776 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:54:50,844 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:54:50,845 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:55:00,848 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:55:17,050 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:55:17,053 - INFO - AFC remote call 1 is done.
+2025-10-09 08:55:17,054 - INFO - Processing Key: Insights: Any insights you have about the alarm. If none, state 'none'
+2025-10-09 08:55:17,054 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:55:17,076 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:55:26,729 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:55:26,733 - INFO - AFC remote call 1 is done.
+2025-10-09 08:55:26,734 - INFO - Processing Key: Priority: The priority level of the alarm, either of 'Urgent', 'Normal' or 'Low'. Alarm should be marked as 'Urgent' if it requires immediate attention and 'Low' if it is informational or non-critical
+2025-10-09 08:55:26,734 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:55:26,758 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:55:31,692 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:55:31,695 - INFO - AFC remote call 1 is done.
+2025-10-09 08:55:31,696 - INFO - Processing Key: Status: The current state of the alarm, either of 'Resolved' or 'Active'
+2025-10-09 08:55:31,697 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:55:31,721 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:55:31,780 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:55:31,781 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:55:41,786 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:55:41,850 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:55:41,850 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:56:01,851 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:56:07,695 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:56:07,698 - INFO - AFC remote call 1 is done.
+2025-10-09 08:56:07,699 - INFO - Initial Alarm data :
+2025-10-09 08:56:07,699 - INFO - {'Alarm Summary': 'Ping from server to 10.1.0.2 and from remote-worker to 10.0.1.2 are failing with 100% packet loss.', 'Device Family': 'Server, Remote-Worker', 'Recommended Actions': "1. **Investigate 'server' to 10.1.0.2 Connectivity Failure:**\n   - On the server, run `traceroute 10.1.0.2` (or `tracert 10.1.0.2` on Windows) to identify the point of failure in the network path.\n   - On the gateway router for the server's subnet, check the routing table for a valid route to 10.1.0.2 using the command `show ip route 10.1.0.2`.\n   - Examine firewalls and Access Control Lists (ACLs) along the path for rules that may be blocking ICMP or traffic from the server's IP address. Use a command like `show access-lists`.\n   - Verify that the target device (10.1.0.2) is online and its network interface is active. Check the connected switch port status.\n\n2. **Investigate 'remote-worker' to 10.0.1.2 Connectivity Failure:**\n   - On the remote-worker's machine, confirm the VPN client is connected and that traffic for 10.0.1.2 is being routed through the VPN tunnel.\n   - Run `traceroute 10.0.1.2` from the remote-worker's machine to identify where the packets are being dropped.\n   - On the corporate VPN concentrator or firewall, verify that security policies permit traffic from the remote access VPN pool to the destination host 10.0.1.2.\n   - Ensure the internal network has a valid return route to the remote-worker's VPN IP address pool.", 'Tracking Next Steps': "After implementing the recommended actions, re-run the ping commands from both the 'server' and 'remote-worker' to their respective destinations (10.1.0.2 and 10.0.1.2) to confirm if connectivity has been restored. If the 100% packet loss persists, escalate the issue to the Network Engineering team for in-depth analysis of the network infrastructure.", 'Alarm Details': 'ping from server: PING 10.1.0.2 (10.1.0.2): 56 data bytes\n\n--- 10.1.0.2 ping statistics ---\n4 packets transmitted, 0 packets received, 100% packet loss\n\nping from remote-worker: PING 10.0.1.2 (10.0.1.2): 56 data bytes\n\n--- 10.0.1.2 ping statistics ---\n4 packets transmitted, 0 packets received, 100% packet loss', 'Insights': "Both pings from 'server' and 'remote-worker' are failing with 100% packet loss, indicating a potential network connectivity issue.", 'Priority': 'Urgent', 'Status': 'Active', 'Alarm Source': 'Ping Result', 'Alarm ID': 'Ping Result 1'}
+2025-10-09 08:56:07,700 - INFO - Step 2. Starting workflow invocation based on Agentic insights..
+2025-10-09 08:56:07,701 - INFO - Total Alarms : 1
+2025-10-09 08:56:07,701 - INFO - Alarm #1 : 
+2025-10-09 08:56:07,701 - INFO - {
+    "Alarm Summary": "Ping from server to 10.1.0.2 and from remote-worker to 10.0.1.2 are failing with 100% packet loss.",
+    "Device Family": "Server, Remote-Worker",
+    "Recommended Actions": "1. **Investigate 'server' to 10.1.0.2 Connectivity Failure:**\n   - On the server, run `traceroute 10.1.0.2` (or `tracert 10.1.0.2` on Windows) to identify the point of failure in the network path.\n   - On the gateway router for the server's subnet, check the routing table for a valid route to 10.1.0.2 using the command `show ip route 10.1.0.2`.\n   - Examine firewalls and Access Control Lists (ACLs) along the path for rules that may be blocking ICMP or traffic from the server's IP address. Use a command like `show access-lists`.\n   - Verify that the target device (10.1.0.2) is online and its network interface is active. Check the connected switch port status.\n\n2. **Investigate 'remote-worker' to 10.0.1.2 Connectivity Failure:**\n   - On the remote-worker's machine, confirm the VPN client is connected and that traffic for 10.0.1.2 is being routed through the VPN tunnel.\n   - Run `traceroute 10.0.1.2` from the remote-worker's machine to identify where the packets are being dropped.\n   - On the corporate VPN concentrator or firewall, verify that security policies permit traffic from the remote access VPN pool to the destination host 10.0.1.2.\n   - Ensure the internal network has a valid return route to the remote-worker's VPN IP address pool.",
+    "Tracking Next Steps": "After implementing the recommended actions, re-run the ping commands from both the 'server' and 'remote-worker' to their respective destinations (10.1.0.2 and 10.0.1.2) to confirm if connectivity has been restored. If the 100% packet loss persists, escalate the issue to the Network Engineering team for in-depth analysis of the network infrastructure.",
+    "Alarm Details": "ping from server: PING 10.1.0.2 (10.1.0.2): 56 data bytes\n\n--- 10.1.0.2 ping statistics ---\n4 packets transmitted, 0 packets received, 100% packet loss\n\nping from remote-worker: PING 10.0.1.2 (10.0.1.2): 56 data bytes\n\n--- 10.0.1.2 ping statistics ---\n4 packets transmitted, 0 packets received, 100% packet loss",
+    "Insights": "Both pings from 'server' and 'remote-worker' are failing with 100% packet loss, indicating a potential network connectivity issue.",
+    "Priority": "Urgent",
+    "Status": "Active",
+    "Alarm Source": "Ping Result",
+    "Alarm ID": "Ping Result 1"
+}
+2025-10-09 08:56:07,702 - INFO - Unresolved Ping alarm detected.
+2025-10-09 08:56:07,702 - INFO - Step 3. Finding the traffic path based on the alarm and topology..
+2025-10-09 08:56:07,703 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:56:07,724 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:56:19,167 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:56:19,169 - INFO - AFC remote call 1 is done.
+2025-10-09 08:56:19,170 - INFO - Traffic Path : 
+2025-10-09 08:56:19,170 - INFO - {'traffic-path': ['server', 'branch-fw', 'branch-router', 'remote-worker']}
+2025-10-09 08:56:19,171 - INFO - Step 4. Confirming if the alarm is still active..
+2025-10-09 08:56:19,171 - INFO - Running latest telemetry tests..
+2025-10-09 08:56:19,172 - INFO - Starting telemetry.py
+2025-10-09 08:56:19,363 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:56:19,364 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:56:20,365 - INFO - Authentication (publickey) failed.
+2025-10-09 08:56:20,455 - INFO - Authentication (publickey) failed.
+2025-10-09 08:56:20,557 - INFO - Authentication (password) successful!
+2025-10-09 08:56:20,644 - INFO - Authentication (password) successful!
+2025-10-09 08:56:33,923 - INFO - Completed telemetry.py
+2025-10-09 08:56:33,923 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:56:33,947 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:56:41,684 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:56:41,686 - INFO - AFC remote call 1 is done.
+2025-10-09 08:56:41,687 - INFO - Alarm resolved or not : 
+2025-10-09 08:56:41,687 - INFO - not-Resolved
+2025-10-09 08:56:41,687 - INFO - Step 5 Generating root cause analysis for Agentic insights..
+2025-10-09 08:56:41,688 - INFO - Starting telemetry.py
+2025-10-09 08:56:41,895 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:56:41,896 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:56:42,919 - INFO - Authentication (publickey) failed.
+2025-10-09 08:56:43,015 - INFO - Authentication (publickey) failed.
+2025-10-09 08:56:43,112 - INFO - Authentication (password) successful!
+2025-10-09 08:56:43,212 - INFO - Authentication (password) successful!
+2025-10-09 08:56:56,505 - INFO - Completed telemetry.py
+2025-10-09 08:56:56,506 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:56:56,507 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:56:56,507 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:56:56,507 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:56:56,684 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:56:56,685 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:56:56,686 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:56:56,686 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:56:56,969 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:56:56,971 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:06,975 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:07,062 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:07,064 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:10,906 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:57:10,908 - INFO - AFC remote call 1 is done.
+2025-10-09 08:57:11,106 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:57:11,674 - INFO - Authentication (password) successful!
+2025-10-09 08:57:16,320 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:57:16,320 - INFO - AFC remote call 1 is done.
+2025-10-09 08:57:16,321 - INFO - Connecting to branch-router (198.18.1.100)...
+2025-10-09 08:57:16,511 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 08:57:17,692 - INFO - Auth banner: b"C\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2025-10-09 08:57:17,789 - INFO - Authentication (password) successful!
+2025-10-09 08:57:19,090 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:57:19,092 - INFO - AFC remote call 1 is done.
+2025-10-09 08:57:19,289 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:57:19,432 - INFO - Executing command on branch-router: show ip interface brief
+2025-10-09 08:57:19,847 - INFO - Authentication (password) successful!
+2025-10-09 08:57:20,087 - INFO - Executing command on branch-router: show ip route
+2025-10-09 08:57:20,656 - INFO - Executing command on branch-router: ping 10.1.0.2 repeat 3
+2025-10-09 08:57:21,310 - INFO - Executing command on branch-router: ping 10.0.1.2 repeat 3
+2025-10-09 08:57:22,115 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:22,116 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:22,116 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:22,116 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:22,116 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:22,116 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:22,117 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:22,117 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:22,860 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:22,875 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:22,876 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:22,877 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:22,878 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:22,882 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:22,883 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:22,883 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:22,931 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:22,932 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:23,043 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:23,043 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:23,044 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:23,044 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:23,044 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:23,044 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:23,045 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:23,047 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:23,047 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:23,047 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:23,048 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:23,049 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:27,080 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:27,146 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:27,147 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:57:27,975 - INFO - Executing command on branch-router: traceroute 10.0.1.2 ttl 1 5
+2025-10-09 08:57:30,301 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:30,302 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:30,302 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:30,303 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:30,303 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:30,303 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:30,303 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:30,304 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:30,304 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:30,304 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:31,383 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:31,420 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:31,443 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:31,452 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:31,460 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:31,474 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:31,475 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:31,476 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:31,479 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:31,480 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:31,485 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:31,486 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:31,497 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:31,497 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:31,511 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:31,511 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:31,514 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:31,514 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:31,522 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:31,523 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:31,527 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:31,527 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:31,530 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:31,530 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:31,534 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:31,535 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:31,540 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:31,541 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:31,547 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:31,548 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:32,941 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:32,998 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:33,002 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:33,051 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:33,051 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:33,051 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:33,051 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:33,054 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:33,054 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:33,108 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:33,109 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:33,109 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:33,109 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:33,112 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:33,113 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:33,119 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:33,119 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:33,123 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:33,123 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:33,130 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:57:33,130 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:33,131 - INFO - AFC remote call 1 is done.
+2025-10-09 08:57:33,131 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:33,132 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:57:33,149 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:33,207 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:33,208 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:57:41,479 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:41,500 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:41,515 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:41,517 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:41,527 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:41,531 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:41,535 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:41,536 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:41,537 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:41,538 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:41,545 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:41,551 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:41,563 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:41,564 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:41,570 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:41,571 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:41,576 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:41,577 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:41,585 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:41,585 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:41,586 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:41,586 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:41,588 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:41,589 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:41,589 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:41,589 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:41,601 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:41,601 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:41,604 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:41,604 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:43,211 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:43,272 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:43,273 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:57:53,011 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:53,117 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:53,118 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:53,120 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:53,128 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:53,129 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:53,136 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:57:53,398 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:53,399 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:57:53,402 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:53,402 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:53,402 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:57:53,405 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:57:53,405 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:57:53,406 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:01,539 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:01,570 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:01,575 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:01,580 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:01,591 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:01,591 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:01,596 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:01,596 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:01,607 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:01,607 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:01,618 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:01,618 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:01,627 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:01,628 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:01,633 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:01,634 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:01,639 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:01,639 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:01,648 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:01,648 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:01,651 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:01,651 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:01,652 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:01,652 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:01,656 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:01,657 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:01,662 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:01,662 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:01,663 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:01,663 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:02,902 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:58:02,903 - INFO - AFC remote call 1 is done.
+2025-10-09 08:58:02,903 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:02,926 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:02,988 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:02,988 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:03,280 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:03,343 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:03,344 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:03,614 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:58:03,616 - INFO - AFC remote call 1 is done.
+2025-10-09 08:58:03,617 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:03,643 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:03,709 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:03,710 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:06,445 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:58:06,445 - INFO - AFC remote call 1 is done.
+2025-10-09 08:58:07,153 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:07,202 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:07,202 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:12,993 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:13,058 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:13,058 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:58:13,655 - INFO - Executing command on branch-router: show ip arp | include 10.0.0.2|10.1.0.2
+2025-10-09 08:58:13,714 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:13,767 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:13,769 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:58:14,392 - INFO - Executing command on branch-router: show ip access-lists
+2025-10-09 08:58:15,021 - INFO - Executing command on branch-router: show run interface GigabitEthernet0/1
+2025-10-09 08:58:15,778 - INFO - Executing command on branch-router: show run interface GigabitEthernet0/2
+2025-10-09 08:58:16,576 - INFO - Executing command on branch-router: show logging | last 50
+2025-10-09 08:58:16,916 - INFO - Completed execution on branch-router
+2025-10-09 08:58:16,917 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:16,917 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:16,918 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:16,918 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:16,919 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:16,919 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:16,923 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:16,923 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:16,923 - INFO - Sending prompt to Gemini model: gemini-2.5-pro
+2025-10-09 08:58:17,544 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:17,584 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:17,589 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:17,608 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:17,618 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:17,619 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:17,632 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:17,635 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:17,636 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:17,638 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:17,639 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:17,645 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:17,645 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:17,647 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:17,647 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:17,671 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:17,672 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:17,678 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:17,679 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:17,690 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:17,690 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:17,695 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:17,695 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:17,695 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:17,696 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:17,701 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:17,701 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 1/5. Retrying in 10 seconds...
+2025-10-09 08:58:27,624 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:27,647 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:27,652 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:27,675 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:27,681 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:27,683 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:27,684 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:58:27,695 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:27,696 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:27,700 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:27,706 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:27,708 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:27,708 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:58:27,713 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:27,714 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:58:27,737 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:27,738 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:58:27,742 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:27,743 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:58:27,752 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:27,752 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:58:27,758 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:27,758 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:58:27,784 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:27,785 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 2/5. Retrying in 20 seconds...
+2025-10-09 08:58:33,064 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:33,114 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:33,116 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:33,405 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:33,411 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:33,412 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:33,413 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:33,461 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:33,462 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:33,464 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:33,464 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:33,469 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:33,470 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:33,472 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:33,473 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:33,770 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:33,823 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:33,823 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:39,588 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 200 OK"
+2025-10-09 08:58:39,590 - INFO - AFC remote call 1 is done.
+2025-10-09 08:58:41,624 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:41,631 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:41,638 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:41,641 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:41,651 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:41,653 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:41,653 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:41,660 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:41,666 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:41,666 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:41,685 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:41,685 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:41,690 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:41,690 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:41,691 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:41,691 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:41,692 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:41,693 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:41,702 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:41,702 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:41,713 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:41,713 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:41,718 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:41,718 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:41,732 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:41,732 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:41,852 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:41,853 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:41,956 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:41,957 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:43,349 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:43,402 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:43,406 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 4/5. Retrying in 80 seconds...
+2025-10-09 08:58:47,689 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:47,710 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:47,719 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:47,743 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:47,743 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:47,744 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:47,745 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:47,755 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:47,763 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:47,765 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:47,766 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:47,774 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:47,775 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:47,787 - INFO - AFC is enabled with max remote calls: 10.
+2025-10-09 08:58:47,799 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:47,800 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:47,800 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:47,800 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:47,815 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:47,815 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:47,817 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:47,817 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 08:58:47,844 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent "HTTP/1.1 429 Too Many Requests"
+2025-10-09 08:58:47,844 - WARNING - Rate limit/quota exceeded (HTTP 429). Attempt 3/5. Retrying in 40 seconds...
+2025-10-09 09:22:28,324 - INFO - Starting telemetry.py
+2025-10-09 09:22:28,516 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 09:22:28,523 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 09:22:29,558 - INFO - Authentication (publickey) failed.
+2025-10-09 09:22:29,654 - INFO - Authentication (publickey) failed.
+2025-10-09 09:22:29,753 - INFO - Authentication (password) successful!
+2025-10-09 09:22:29,845 - INFO - Authentication (password) successful!
+2025-10-09 09:22:43,138 - INFO - Completed telemetry.py
+2025-10-09 09:22:43,139 - INFO - Length of Alarms : 
+2025-10-09 09:22:43,139 - INFO - 1
+2025-10-09 09:22:43,139 - INFO - Step 1 : Generating initial Agentic report for current alarms..
+2025-10-09 09:22:43,143 - INFO - Processing Key: Alarm Summary: A concise description of the alarm summarizing the issue
+2025-10-09 09:22:43,143 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:22:56,999 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:22:57,031 - INFO - Processing Key: Device Family: The category or type of device impacted (e.g., Switches, Routers)
+2025-10-09 09:22:57,031 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:23:34,700 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:23:34,704 - INFO - Processing Key: Recommended Actions: A list of actionable steps to resolve or mitigate the issue. Each action should be clear, specific, and actionable, such as relevant Cisco CLI commands, configuration steps, or administrative tasks
+2025-10-09 09:23:34,704 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:24:28,372 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:24:28,429 - INFO - Processing Key: Tracking Next Steps: Instructions on how to monitor the issue after performing the recommended actions and what steps to take if the problem persists, including escalation guidance if necessary
+2025-10-09 09:24:28,429 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:25:07,516 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:25:07,520 - INFO - Processing Key: Alarm Details: All other details as available in the alarm data. If none, state 'none'
+2025-10-09 09:25:07,521 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:25:32,095 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:25:32,097 - INFO - Processing Key: Insights: Any insights you have about the alarm. If none, state 'none'
+2025-10-09 09:25:32,097 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:25:49,474 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:25:49,476 - INFO - Processing Key: Priority: The priority level of the alarm, either of 'Urgent', 'Normal' or 'Low'. Alarm should be marked as 'Urgent' if it requires immediate attention and 'Low' if it is informational or non-critical
+2025-10-09 09:25:49,477 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:25:55,050 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:25:55,052 - INFO - Processing Key: Status: The current state of the alarm, either of 'Resolved' or 'Active'
+2025-10-09 09:25:55,052 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:25:59,461 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:25:59,463 - INFO - Initial Alarm data :
+2025-10-09 09:25:59,464 - INFO - {'Alarm Summary': 'Ping failures with 100% packet loss to 10.0.1.2 and 10.1.0.2 from remote-worker and server.', 'Device Family': 'Routers', 'Recommended Actions': '- Verify the destination hosts are online and allowed to reply to ICMP:\n  - On 10.0.1.2 and 10.1.0.2: confirm NIC is up, correct IP/mask/gateway; ping their default gateway.\n  - Temporarily allow ICMP on OS firewalls (Windows: netsh advfirewall firewall add rule name="ICMP Allow" protocol=icmpv4:8,any dir=in action=allow; Linux: sudo iptables -I INPUT -p icmp --icmp-type echo-request -j ACCEPT).\n- From each source, test local connectivity:\n  - ping <default-gateway>\n  - traceroute 10.0.1.2 / traceroute 10.1.0.2 to locate the first failing hop.\n- On the Layer-3 gateway(s) for 10.0.1.0/24 and 10.1.0.0/24, verify interfaces/VLANs are up:\n  - show ip interface brief\n  - show vlan brief\n  - show run interface vlan <VLAN-ID> (confirm SVI IPs and no shutdown)\n  - show interfaces status (confirm access/trunk ports carry the correct VLANs)\n- Check ARP and MAC reachability for the destinations:\n  - show arp | include 10.0.1.2\n  - show arp | include 10.1.0.2\n  - clear arp <ip> and retry ping if stale/incomplete.\n- Validate routing on transit routers/firewalls:\n  - show ip route 10.0.1.2\n  - show ip route 10.1.0.2\n  - If routes are missing, add the correct routes or advertise via the IGP:\n    - ip route 10.0.1.0 255.255.255.0 <next-hop>\n    - ip route 10.1.0.0 255.255.255.0 <next-hop>\n    - or configure OSPF: router ospf 1; network 10.0.1.0 0.0.0.255 area 0; network 10.1.0.0 0.0.0.255 area 0\n- Inspect ACLs/firewall policies that might block ICMP between the sources and 10.0.1.2/10.1.0.2:\n  - show access-lists\n  - show run interface <int> (check ip access-group in/out)\n  - Add explicit permits if needed (example):\n    - ip access-list extended PERMIT-ICMP\n      permit icmp 10.0.1.0 0.0.0.255 10.1.0.0 0.0.0.255 echo\n      permit icmp 10.1.0.0 0.0.0.255 10.0.1.0 0.0.0.255 echo-reply\n    - interface <int>; ip access-group PERMIT-ICMP in\n  - On ASA/FTD, validate with packet-tracer:\n    - packet-tracer input <in-if> icmp <src-ip> 8 0 <dst-ip>\n- If the remote worker uses VPN/SD-WAN, verify tunnel reachability and policies:\n  - show crypto ikev2 sa; show crypto ipsec sa\n  - show vpn-sessiondb anyconnect / show sdwan control connections\n  - Ensure split-tunnel and crypto ACLs include 10.0.1.0/24 and 10.1.0.0/24.\n- Re-test and validate:\n  - ping 10.0.1.2 and 10.1.0.2 from both the remote worker and the server\n  - Collect outputs (traceroute, show ip route, show access-lists) if failure persists for escalation.', 'Tracking Next Steps': '- After fixes, run continuous pings from each source: remote-worker -> 10.0.1.2 and server -> 10.1.0.2 (e.g., ping -i 1 for 15–30 minutes); target is 0% packet loss.\n- If any loss persists, run traceroute/mtr from both sources and capture the hop where it fails.\n- Monitor network devices: interface status/error counters, link flaps, ARP/MAC table stability on access switches, and firewall/router logs for ICMP or related drops; track NMS up/down status.\n- Check reachability of other hosts in 10.0.1.0/24 and 10.1.0.0/24 to determine host-specific vs network-path issues.\n- Escalate if still failing:\n  - Only 10.0.1.2 or 10.1.0.2 down while others in subnet are reachable: escalate to server/VM team to verify power, OS, NIC/port, and IP conflicts.\n  - Multiple hosts unreachable or traceroute fails beyond local gateway/WAN: escalate to network team or ISP/SD‑WAN with ping/traceroute outputs, timestamps, and interface stats.\n  - Issue isolated to remote-worker path: escalate to VPN/endpoint team.\n- Closure criteria: 30–60 minutes with 0% packet loss from both sources, no interface errors or flaps, and green status in monitoring.', 'Alarm Details': 'ping from remote-worker: PING 10.0.1.2 (10.0.1.2): 56 data bytes; 4 packets transmitted, 0 packets received, 100% packet loss | ping from server: PING 10.1.0.2 (10.1.0.2): 56 data bytes; 4 packets transmitted, 0 packets received, 100% packet loss', 'Insights': '100% packet loss from both hosts to different IPs suggests a broader network connectivity issue or ICMP/firewall blocking.', 'Priority': 'Urgent', 'Status': 'Active', 'Alarm Source': 'Ping Result', 'Alarm ID': 'Ping Result 1'}
+2025-10-09 09:25:59,465 - INFO - Step 2. Starting workflow invocation based on Agentic insights..
+2025-10-09 09:25:59,466 - INFO - Total Alarms : 1
+2025-10-09 09:25:59,466 - INFO - Alarm #1 : 
+2025-10-09 09:25:59,467 - INFO - {
+    "Alarm Summary": "Ping failures with 100% packet loss to 10.0.1.2 and 10.1.0.2 from remote-worker and server.",
+    "Device Family": "Routers",
+    "Recommended Actions": "- Verify the destination hosts are online and allowed to reply to ICMP:\n  - On 10.0.1.2 and 10.1.0.2: confirm NIC is up, correct IP/mask/gateway; ping their default gateway.\n  - Temporarily allow ICMP on OS firewalls (Windows: netsh advfirewall firewall add rule name=\"ICMP Allow\" protocol=icmpv4:8,any dir=in action=allow; Linux: sudo iptables -I INPUT -p icmp --icmp-type echo-request -j ACCEPT).\n- From each source, test local connectivity:\n  - ping <default-gateway>\n  - traceroute 10.0.1.2 / traceroute 10.1.0.2 to locate the first failing hop.\n- On the Layer-3 gateway(s) for 10.0.1.0/24 and 10.1.0.0/24, verify interfaces/VLANs are up:\n  - show ip interface brief\n  - show vlan brief\n  - show run interface vlan <VLAN-ID> (confirm SVI IPs and no shutdown)\n  - show interfaces status (confirm access/trunk ports carry the correct VLANs)\n- Check ARP and MAC reachability for the destinations:\n  - show arp | include 10.0.1.2\n  - show arp | include 10.1.0.2\n  - clear arp <ip> and retry ping if stale/incomplete.\n- Validate routing on transit routers/firewalls:\n  - show ip route 10.0.1.2\n  - show ip route 10.1.0.2\n  - If routes are missing, add the correct routes or advertise via the IGP:\n    - ip route 10.0.1.0 255.255.255.0 <next-hop>\n    - ip route 10.1.0.0 255.255.255.0 <next-hop>\n    - or configure OSPF: router ospf 1; network 10.0.1.0 0.0.0.255 area 0; network 10.1.0.0 0.0.0.255 area 0\n- Inspect ACLs/firewall policies that might block ICMP between the sources and 10.0.1.2/10.1.0.2:\n  - show access-lists\n  - show run interface <int> (check ip access-group in/out)\n  - Add explicit permits if needed (example):\n    - ip access-list extended PERMIT-ICMP\n      permit icmp 10.0.1.0 0.0.0.255 10.1.0.0 0.0.0.255 echo\n      permit icmp 10.1.0.0 0.0.0.255 10.0.1.0 0.0.0.255 echo-reply\n    - interface <int>; ip access-group PERMIT-ICMP in\n  - On ASA/FTD, validate with packet-tracer:\n    - packet-tracer input <in-if> icmp <src-ip> 8 0 <dst-ip>\n- If the remote worker uses VPN/SD-WAN, verify tunnel reachability and policies:\n  - show crypto ikev2 sa; show crypto ipsec sa\n  - show vpn-sessiondb anyconnect / show sdwan control connections\n  - Ensure split-tunnel and crypto ACLs include 10.0.1.0/24 and 10.1.0.0/24.\n- Re-test and validate:\n  - ping 10.0.1.2 and 10.1.0.2 from both the remote worker and the server\n  - Collect outputs (traceroute, show ip route, show access-lists) if failure persists for escalation.",
+    "Tracking Next Steps": "- After fixes, run continuous pings from each source: remote-worker -> 10.0.1.2 and server -> 10.1.0.2 (e.g., ping -i 1 for 15\u201330 minutes); target is 0% packet loss.\n- If any loss persists, run traceroute/mtr from both sources and capture the hop where it fails.\n- Monitor network devices: interface status/error counters, link flaps, ARP/MAC table stability on access switches, and firewall/router logs for ICMP or related drops; track NMS up/down status.\n- Check reachability of other hosts in 10.0.1.0/24 and 10.1.0.0/24 to determine host-specific vs network-path issues.\n- Escalate if still failing:\n  - Only 10.0.1.2 or 10.1.0.2 down while others in subnet are reachable: escalate to server/VM team to verify power, OS, NIC/port, and IP conflicts.\n  - Multiple hosts unreachable or traceroute fails beyond local gateway/WAN: escalate to network team or ISP/SD\u2011WAN with ping/traceroute outputs, timestamps, and interface stats.\n  - Issue isolated to remote-worker path: escalate to VPN/endpoint team.\n- Closure criteria: 30\u201360 minutes with 0% packet loss from both sources, no interface errors or flaps, and green status in monitoring.",
+    "Alarm Details": "ping from remote-worker: PING 10.0.1.2 (10.0.1.2): 56 data bytes; 4 packets transmitted, 0 packets received, 100% packet loss | ping from server: PING 10.1.0.2 (10.1.0.2): 56 data bytes; 4 packets transmitted, 0 packets received, 100% packet loss",
+    "Insights": "100% packet loss from both hosts to different IPs suggests a broader network connectivity issue or ICMP/firewall blocking.",
+    "Priority": "Urgent",
+    "Status": "Active",
+    "Alarm Source": "Ping Result",
+    "Alarm ID": "Ping Result 1"
+}
+2025-10-09 09:25:59,467 - INFO - Unresolved Ping alarm detected.
+2025-10-09 09:25:59,468 - INFO - Step 3. Finding the traffic path based on the alarm and topology..
+2025-10-09 09:25:59,469 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:26:44,094 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:26:44,097 - INFO - Traffic Path : 
+2025-10-09 09:26:44,097 - INFO - {'traffic-path': ['remote-worker', 'branch-router', 'branch-fw', 'server']}
+2025-10-09 09:26:44,098 - INFO - Step 4. Confirming if the alarm is still active..
+2025-10-09 09:26:44,098 - INFO - Running latest telemetry tests..
+2025-10-09 09:26:44,099 - INFO - Starting telemetry.py
+2025-10-09 09:26:44,321 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 09:26:44,321 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 09:26:45,497 - INFO - Authentication (publickey) failed.
+2025-10-09 09:26:45,831 - INFO - Authentication (publickey) failed.
+2025-10-09 09:26:46,008 - INFO - Authentication (password) successful!
+2025-10-09 09:26:46,024 - INFO - Authentication (password) successful!
+2025-10-09 09:26:59,350 - INFO - Completed telemetry.py
+2025-10-09 09:26:59,350 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:27:03,890 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:27:03,894 - INFO - Alarm resolved or not : 
+2025-10-09 09:27:03,894 - INFO - not-Resolved
+2025-10-09 09:27:03,894 - INFO - Step 5 Generating root cause analysis for Agentic insights..
+2025-10-09 09:27:03,895 - INFO - Starting telemetry.py
+2025-10-09 09:27:04,117 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 09:27:04,119 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 09:27:05,204 - INFO - Authentication (publickey) failed.
+2025-10-09 09:27:05,312 - INFO - Authentication (publickey) failed.
+2025-10-09 09:27:05,439 - INFO - Authentication (password) successful!
+2025-10-09 09:27:05,541 - INFO - Authentication (password) successful!
+2025-10-09 09:27:18,880 - INFO - Completed telemetry.py
+2025-10-09 09:27:18,881 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:27:18,881 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:27:18,882 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:27:18,882 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:29,860 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:28:30,181 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 09:28:30,743 - INFO - Authentication (password) successful!
+2025-10-09 09:28:41,136 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:41,137 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:41,137 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:41,137 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:41,140 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:41,141 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:41,141 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:41,142 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:41,143 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:41,143 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:28:43,602 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:28:43,712 - INFO - Connecting to branch-router (198.18.1.100)...
+2025-10-09 09:28:43,954 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 09:28:45,020 - INFO - Auth banner: b"C\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2025-10-09 09:28:45,149 - INFO - Authentication (password) successful!
+2025-10-09 09:28:46,831 - INFO - Executing command on branch-router: show ip interface brief
+2025-10-09 09:28:47,484 - INFO - Executing command on branch-router: show interfaces GigabitEthernet0/1
+2025-10-09 09:28:48,165 - INFO - Executing command on branch-router: show interfaces GigabitEthernet0/2
+2025-10-09 09:28:48,855 - INFO - Executing command on branch-router: show ip route 10.0.1.0 255.255.255.0
+2025-10-09 09:28:49,935 - INFO - Executing command on branch-router: show ip route 10.1.0.2
+2025-10-09 09:28:50,697 - INFO - Executing command on branch-router: show arp | include 10.0.0.2|10.1.0.2
+2025-10-09 09:28:51,422 - INFO - Executing command on branch-router: show ip access-lists
+2025-10-09 09:28:52,096 - INFO - Executing command on branch-router: show run | include ip access-group
+2025-10-09 09:28:53,696 - INFO - Executing command on branch-router: ping 10.0.1.2 source 10.0.0.1 repeat 5
+2025-10-09 09:29:04,446 - INFO - Executing command on branch-router: traceroute 10.0.1.2 numeric timeout 1 probe 1 ttl 1 6
+2025-10-09 09:29:08,778 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:09,097 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 09:29:09,673 - INFO - Authentication (password) successful!
+2025-10-09 09:29:10,874 - INFO - Completed execution on branch-router
+2025-10-09 09:29:10,875 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:10,876 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:10,876 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:10,877 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:10,877 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:10,878 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:10,879 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:10,881 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:11,003 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:11,006 - INFO - Connecting to branch-fw (198.18.1.109)...
+2025-10-09 09:29:11,189 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 09:29:11,677 - INFO - Authentication (password) successful!
+2025-10-09 09:29:14,336 - INFO - Executing command on branch-fw: show interface ip brief
+2025-10-09 09:29:14,530 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:14,533 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:14,976 - INFO - Executing command on branch-fw: show route
+2025-10-09 09:29:14,994 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:14,996 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:15,618 - INFO - Executing command on branch-fw: show run access-group
+2025-10-09 09:29:16,258 - INFO - Executing command on branch-fw: show access-list
+2025-10-09 09:29:16,903 - INFO - Executing command on branch-fw: packet-tracer input outside icmp 10.1.0.2 8 0 10.0.1.2 detailed
+2025-10-09 09:29:17,870 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:17,872 - INFO - Executing command on branch-fw: packet-tracer input inside icmp 10.0.1.2 8 0 10.1.0.2 detailed
+2025-10-09 09:29:17,872 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:18,014 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:18,022 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:18,797 - INFO - Executing command on branch-fw: ping 10.0.1.2 repeat 3 timeout 2
+2025-10-09 09:29:18,894 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:18,902 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:19,075 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:19,450 - INFO - Executing command on branch-fw: ping 10.1.0.2 repeat 3 timeout 2
+2025-10-09 09:29:20,100 - INFO - Executing command on branch-fw: traceroute 10.1.0.2 ttl 1 5
+2025-10-09 09:29:20,104 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,105 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,105 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,105 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,106 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,107 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,107 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,107 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,107 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,107 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,746 - INFO - Executing command on branch-fw: show logging | grep 10.0.1.2
+2025-10-09 09:29:20,968 - INFO - Completed execution on branch-fw
+2025-10-09 09:29:20,969 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,969 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,969 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,969 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,978 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,970 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,972 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,982 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:20,984 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:22,529 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:40,358 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:40,682 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:40,958 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:48,942 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:48,944 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:52,495 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:53,062 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:53,236 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:53,239 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:54,569 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:54,578 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:55,607 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:55,791 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:55,910 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:57,465 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:57,567 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:57,649 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:29:57,679 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:29:57,980 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:01,935 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:02,571 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:04,041 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:05,454 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:05,707 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:06,043 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:07,536 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:08,002 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:09,339 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:10,012 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:10,193 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:11,828 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:11,832 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:30:12,368 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:13,978 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:14,933 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:21,349 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:24,130 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:25,455 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:32,748 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:34,503 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:36,430 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:44,608 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:51,482 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:51,604 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:30:54,325 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:30:54,329 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:30:59,651 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:31:09,992 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:31:09,996 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:32:26,027 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:32:26,146 - INFO - Completed processing for device: branch-router
+2025-10-09 09:33:02,574 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:33:02,698 - INFO - Completed processing for device: server
+2025-10-09 09:33:35,220 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:33:35,337 - INFO - Completed processing for device: branch-fw
+2025-10-09 09:33:51,895 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:33:52,030 - INFO - Completed processing for device: remote-worker
+2025-10-09 09:33:52,031 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:35:17,565 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:35:18,409 - INFO - RCA : 
+2025-10-09 09:35:18,412 - INFO - Starting telemetry.py
+2025-10-09 09:35:18,617 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 09:35:18,617 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 09:35:19,655 - INFO - Authentication (publickey) failed.
+2025-10-09 09:35:19,751 - INFO - Authentication (publickey) failed.
+2025-10-09 09:35:19,846 - INFO - Authentication (password) successful!
+2025-10-09 09:35:19,939 - INFO - Authentication (password) successful!
+2025-10-09 09:35:33,224 - INFO - Completed telemetry.py
+2025-10-09 09:35:33,224 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:35:38,761 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:35:38,762 - INFO - Alarm resolved or not : 
+2025-10-09 09:35:38,762 - INFO - not-Resolved
+2025-10-09 09:35:38,762 - INFO - Pausing for human in the loop. Please confirm the RCA and the next steps and then press Enter to continue..
+2025-10-09 09:36:27,544 - INFO - Invalid input. Please type 'confirm' to continue.
+2025-10-09 09:36:30,513 - INFO - Generating CLI commands for Agentic insights..
+2025-10-09 09:36:30,514 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:36:53,164 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:36:53,167 - INFO - CLI Commands to be executed : 
+2025-10-09 09:36:53,167 - INFO - {
+    "branch-fw": [
+        "configure terminal",
+        "object network OBJ_INSIDE_10_0_1_0",
+        " subnet 10.0.1.0 255.255.255.0",
+        " exit",
+        "object network OBJ_REMOTE_10_1_0_0_30",
+        " subnet 10.1.0.0 255.255.255.252",
+        " exit",
+        "access-list ALLOW_INTERSUBNET extended permit icmp object OBJ_REMOTE_10_1_0_0_30 object OBJ_INSIDE_10_0_1_0 echo",
+        "access-list ALLOW_INTERSUBNET extended permit icmp object OBJ_REMOTE_10_1_0_0_30 object OBJ_INSIDE_10_0_1_0 echo-reply",
+        "access-list ALLOW_INTERSUBNET extended permit icmp any object OBJ_INSIDE_10_0_1_0 time-exceeded",
+        "access-list ALLOW_INTERSUBNET extended permit icmp any object OBJ_INSIDE_10_0_1_0 unreachable",
+        "no access-group ALLOW_INTERSUBNET in interface inside",
+        "logging enable",
+        "logging buffered warnings",
+        "access-list ALLOW_INTERSUBNET extended deny ip any any log interval 300",
+        "end"
+    ]
+}
+2025-10-09 09:36:53,167 - INFO - Confirm to continue to ** Auto remediation ** step...
+2025-10-09 09:36:58,676 - INFO - Step 6. Executing auto-remediation commands on devices..
+2025-10-09 09:36:58,679 - INFO - Device : branch-fw
+2025-10-09 09:36:58,679 - INFO - Commands : 
+2025-10-09 09:36:58,679 - INFO - ['configure terminal', 'object network OBJ_INSIDE_10_0_1_0', 'subnet 10.0.1.0 255.255.255.0', 'exit', 'object network OBJ_REMOTE_10_1_0_0_30', 'subnet 10.1.0.0 255.255.255.252', 'exit', 'access-list ALLOW_INTERSUBNET extended permit icmp object OBJ_REMOTE_10_1_0_0_30 object OBJ_INSIDE_10_0_1_0 echo', 'access-list ALLOW_INTERSUBNET extended permit icmp object OBJ_REMOTE_10_1_0_0_30 object OBJ_INSIDE_10_0_1_0 echo-reply', 'access-list ALLOW_INTERSUBNET extended permit icmp any object OBJ_INSIDE_10_0_1_0 time-exceeded', 'access-list ALLOW_INTERSUBNET extended permit icmp any object OBJ_INSIDE_10_0_1_0 unreachable', 'no access-group ALLOW_INTERSUBNET in interface inside', 'logging enable', 'logging buffered warnings', 'access-list ALLOW_INTERSUBNET extended deny ip any any log interval 300', 'end']
+2025-10-09 09:36:58,679 - INFO - Connecting to branch-fw (198.18.1.109) for configuration...
+2025-10-09 09:36:58,869 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 09:36:59,394 - INFO - Authentication (password) successful!
+2025-10-09 09:37:01,746 - INFO - Sending 16 configuration commands to branch-fw...
+2025-10-09 09:37:03,719 - INFO - Configuration successfully applied to branch-fw
+2025-10-09 09:37:03,905 - INFO - Remediation commands executed successfully.
+2025-10-09 09:37:03,906 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 09:37:39,050 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 09:37:39,182 - INFO - Remediation status : 
+2025-10-09 09:37:39,183 - INFO - The remediation was not successful.
+
+What went wrong:
+- The ACL ALLOW_INTERSUBNET was detached from the inside interface with "no access-group ALLOW_INTERSUBNET in interface inside" and was never re-applied. This leaves the ACL inactive, so the intended ICMP allowances and the default deny/log are not enforced.
+
+Please update rca.md to:
+- Remove the step that detaches the ACL, or
+- After modifying the ACL, add a step to re-attach it, for example:
+  - access-group ALLOW_INTERSUBNET in interface inside
+- If the ACL is intended for a different interface/direction, update the access-group command accordingly.
+
+Make these changes to rca.md and then press 'confirm' to continue and retry the remediation.
+2025-10-09 09:37:39,183 - ERROR - Remediation not successful. Please check the remediation log and make the needed changes to the rca.md file and then press 'confirm' to continue and retry the remediation.
+2025-10-09 10:37:47,257 - INFO - Starting telemetry.py
+2025-10-09 10:37:47,449 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 10:37:47,449 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 10:37:48,590 - INFO - Authentication (publickey) failed.
+2025-10-09 10:37:48,591 - INFO - Authentication (publickey) failed.
+2025-10-09 10:37:48,829 - INFO - Authentication (password) successful!
+2025-10-09 10:37:48,832 - INFO - Authentication (password) successful!
+2025-10-09 10:37:52,746 - INFO - Completed telemetry.py
+2025-10-09 10:37:52,747 - INFO - Length of Alarms : 
+2025-10-09 10:37:52,747 - INFO - 1
+2025-10-09 10:37:52,747 - INFO - Step 1 : Generating initial Agentic report for current alarms..
+2025-10-09 10:37:52,751 - INFO - Processing Key: Alarm Summary: A concise description of the alarm summarizing the issue
+2025-10-09 10:37:52,751 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 10:38:00,862 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 10:38:00,894 - INFO - Processing Key: Device Family: The category or type of device impacted (e.g., Switches, Routers)
+2025-10-09 10:38:00,894 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 10:38:16,266 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 10:38:16,269 - INFO - Processing Key: Recommended Actions: A list of actionable steps to resolve or mitigate the issue. Each action should be clear, specific, and actionable, such as relevant Cisco CLI commands, configuration steps, or administrative tasks
+2025-10-09 10:38:16,270 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 10:38:29,338 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 10:38:29,339 - INFO - Processing Key: Tracking Next Steps: Instructions on how to monitor the issue after performing the recommended actions and what steps to take if the problem persists, including escalation guidance if necessary
+2025-10-09 10:38:29,339 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 10:38:44,817 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 10:38:44,820 - INFO - Processing Key: Alarm Details: All other details as available in the alarm data. If none, state 'none'
+2025-10-09 10:38:44,820 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 10:39:10,083 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 10:39:10,085 - INFO - Processing Key: Insights: Any insights you have about the alarm. If none, state 'none'
+2025-10-09 10:39:10,085 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 10:39:16,375 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 10:39:16,378 - INFO - Processing Key: Priority: The priority level of the alarm, either of 'Urgent', 'Normal' or 'Low'. Alarm should be marked as 'Urgent' if it requires immediate attention and 'Low' if it is informational or non-critical
+2025-10-09 10:39:16,378 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 10:39:20,960 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 10:39:20,961 - INFO - Processing Key: Status: The current state of the alarm, either of 'Resolved' or 'Active'
+2025-10-09 10:39:20,961 - INFO - Sending prompt to OpenAI model: gpt-5
+2025-10-09 10:39:26,636 - INFO - HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-09 10:39:26,637 - INFO - Initial Alarm data :
+2025-10-09 10:39:26,637 - INFO - {'Alarm Summary': 'No issue—pings from server and remote-worker successful (0% loss, low latency).', 'Device Family': 'Routers', 'Recommended Actions': '- No immediate remediation required; connectivity is healthy (0% packet loss, low RTT).\n- Continue monitoring; set alerts for packet loss >1% or RTT >10 ms.\n- From the Cisco gateway, verify with:\n  - ping 10.1.0.2 repeat 50 timeout 2\n  - ping 10.0.1.2 repeat 50 timeout 2\n  - show ip interface brief\n  - show interfaces | include errors|drops\n  - show ip route 10.1.0.2\n  - show ip route 10.0.1.2\n- If an alert was raised despite healthy pings, adjust/suppress the alarm thresholds and document the baseline latency.', 'Tracking Next Steps': '- Continue monitoring with scheduled pings from both the server and remote-worker for the next 24–48 hours (1–5 minute intervals). Current baseline: 0% loss, ~2 ms RTT.\n- Trigger alerts if any packet loss is sustained for ≥5 minutes or if latency increases >3x baseline for ≥5 minutes.\n- On any alert, immediately collect MTR/traceroute from both ends, interface counters (errors/drops), link utilization, and relevant firewall/routing logs; compare against baseline.\n- If degradation persists >30 minutes or recurs ≥2 times in 24 hours, open a Network Engineering ticket with timestamps, ping/MTR outputs, and interface stats; escalate to the ISP if MTR indicates upstream hop loss.', 'Alarm Details': 'ping from server: PING 10.1.0.2 (10.1.0.2): 56 data bytes\n64 bytes from 10.1.0.2: seq=0 ttl=42 time=2.133 ms\n64 bytes from 10.1.0.2: seq=1 ttl=42 time=3.305 ms\n64 bytes from 10.1.0.2: seq=2 ttl=42 time=2.022 ms\n64 bytes from 10.1.0.2: seq=3 ttl=42 time=2.143 ms\n\n--- 10.1.0.2 ping statistics ---\n4 packets transmitted, 4 packets received, 0% packet loss\nround-trip min/avg/max = 2.022/2.400/3.305 ms\n\nping from remote-worker: PING 10.0.1.2 (10.0.1.2): 56 data bytes\n64 bytes from 10.0.1.2: seq=0 ttl=42 time=2.170 ms\n64 bytes from 10.0.1.2: seq=1 ttl=42 time=2.183 ms\n64 bytes from 10.0.1.2: seq=2 ttl=42 time=1.990 ms\n64 bytes from 10.0.1.2: seq=3 ttl=42 time=1.913 ms\n\n--- 10.0.1.2 ping statistics ---\n4 packets transmitted, 4 packets received, 0% packet loss\nround-trip min/avg/max = 1.913/2.064/2.183 ms', 'Insights': 'Pings successful from both sources with 0% packet loss and low (~2 ms) latency; connectivity appears healthy.', 'Priority': 'Low', 'Status': 'Resolved', 'Alarm Source': 'Ping Result', 'Alarm ID': 'Ping Result 1'}
+2025-10-09 10:39:26,638 - INFO - Step 2. Starting workflow invocation based on Agentic insights..
+2025-10-09 10:39:26,638 - INFO - Total Alarms : 1
+2025-10-09 10:39:26,638 - INFO - Alarm #1 : 
+2025-10-09 10:39:26,638 - INFO - {
+    "Alarm Summary": "No issue\u2014pings from server and remote-worker successful (0% loss, low latency).",
+    "Device Family": "Routers",
+    "Recommended Actions": "- No immediate remediation required; connectivity is healthy (0% packet loss, low RTT).\n- Continue monitoring; set alerts for packet loss >1% or RTT >10 ms.\n- From the Cisco gateway, verify with:\n  - ping 10.1.0.2 repeat 50 timeout 2\n  - ping 10.0.1.2 repeat 50 timeout 2\n  - show ip interface brief\n  - show interfaces | include errors|drops\n  - show ip route 10.1.0.2\n  - show ip route 10.0.1.2\n- If an alert was raised despite healthy pings, adjust/suppress the alarm thresholds and document the baseline latency.",
+    "Tracking Next Steps": "- Continue monitoring with scheduled pings from both the server and remote-worker for the next 24\u201348 hours (1\u20135 minute intervals). Current baseline: 0% loss, ~2 ms RTT.\n- Trigger alerts if any packet loss is sustained for \u22655 minutes or if latency increases >3x baseline for \u22655 minutes.\n- On any alert, immediately collect MTR/traceroute from both ends, interface counters (errors/drops), link utilization, and relevant firewall/routing logs; compare against baseline.\n- If degradation persists >30 minutes or recurs \u22652 times in 24 hours, open a Network Engineering ticket with timestamps, ping/MTR outputs, and interface stats; escalate to the ISP if MTR indicates upstream hop loss.",
+    "Alarm Details": "ping from server: PING 10.1.0.2 (10.1.0.2): 56 data bytes\n64 bytes from 10.1.0.2: seq=0 ttl=42 time=2.133 ms\n64 bytes from 10.1.0.2: seq=1 ttl=42 time=3.305 ms\n64 bytes from 10.1.0.2: seq=2 ttl=42 time=2.022 ms\n64 bytes from 10.1.0.2: seq=3 ttl=42 time=2.143 ms\n\n--- 10.1.0.2 ping statistics ---\n4 packets transmitted, 4 packets received, 0% packet loss\nround-trip min/avg/max = 2.022/2.400/3.305 ms\n\nping from remote-worker: PING 10.0.1.2 (10.0.1.2): 56 data bytes\n64 bytes from 10.0.1.2: seq=0 ttl=42 time=2.170 ms\n64 bytes from 10.0.1.2: seq=1 ttl=42 time=2.183 ms\n64 bytes from 10.0.1.2: seq=2 ttl=42 time=1.990 ms\n64 bytes from 10.0.1.2: seq=3 ttl=42 time=1.913 ms\n\n--- 10.0.1.2 ping statistics ---\n4 packets transmitted, 4 packets received, 0% packet loss\nround-trip min/avg/max = 1.913/2.064/2.183 ms",
+    "Insights": "Pings successful from both sources with 0% packet loss and low (~2 ms) latency; connectivity appears healthy.",
+    "Priority": "Low",
+    "Status": "Resolved",
+    "Alarm Source": "Ping Result",
+    "Alarm ID": "Ping Result 1"
+}
+2025-10-09 10:39:26,638 - INFO - !! Skipping workflow invocation as Alarm is already resolved !!
+2025-10-09 10:39:26,638 - INFO - Agentic processing completed.

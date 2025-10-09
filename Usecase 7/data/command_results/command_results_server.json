@@ -1,30 +1,18 @@
 {
-    "sudo ip addr": {
-        "output": "1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000\n    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n    inet 127.0.0.1/8 scope host lo\n       valid_lft forever preferred_lft forever\n    inet6 ::1/128 scope host \n       valid_lft forever preferred_lft forever\n2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:00:1c:e4 brd ff:ff:ff:ff:ff:ff\n    inet 10.0.1.2/24 brd 10.0.1.255 scope global eth0\n       valid_lft forever preferred_lft forever\n    inet6 fe80::5054:ff:fe00:1ce4/64 scope link \n       valid_lft forever preferred_lft forever\n3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:15:82:78 brd ff:ff:ff:ff:ff:ff\n    inet 198.18.1.113/24 brd 198.18.1.255 scope global eth1\n       valid_lft forever preferred_lft forever\n    inet6 fe80::5054:ff:fe15:8278/64 scope link \n       valid_lft forever preferred_lft forever",
+    "sudo ip addr show dev eth0": {
+        "output": "2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:08:e2:26 brd ff:ff:ff:ff:ff:ff\n    inet 10.0.1.2/24 brd 10.0.1.255 scope global eth0\n       valid_lft forever preferred_lft forever\n    inet6 fe80::5054:ff:fe08:e226/64 scope link \n       valid_lft forever preferred_lft forever",
         "error": "",
         "exit_status": 0,
         "timeout": false
     },
-    "sudo ip route": {
-        "output": "default via 198.18.1.1 dev eth1 \n10.0.0.0/30 via 10.0.1.1 dev eth0 \n10.0.0.4/30 via 10.0.1.1 dev eth0 \n10.0.1.0/24 dev eth0 scope link  src 10.0.1.2 \n10.0.2.0/24 via 10.0.1.1 dev eth0 \n10.0.3.0/24 via 10.0.1.1 dev eth0 \n10.0.4.0/24 via 10.0.1.1 dev eth0 \n10.0.255.0/24 via 10.0.1.1 dev eth0 \n10.1.0.0/30 via 10.0.1.1 dev eth0 \n198.18.1.0/24 dev eth1 scope link  src 198.18.1.113",
-        "error": "",
-        "exit_status": 0,
-        "timeout": false
-    },
-    "sudo iptables -L -n": {
+    "sudo iptables -L -n -v": {
         "output": "",
         "error": "sudo: iptables: command not found",
         "exit_status": 1,
         "timeout": false
     },
-    "tail -n 50 /var/log/syslog": {
-        "output": "",
-        "error": "tail: can't open '/var/log/syslog': No such file or directory\ntail: no files",
-        "exit_status": 1,
-        "timeout": false
-    },
-    "sudo netstat -rn": {
-        "output": "Kernel IP routing table\nDestination     Gateway         Genmask         Flags   MSS Window  irtt Iface\n0.0.0.0         198.18.1.1      0.0.0.0         UG        0 0          0 eth1\n10.0.0.0        10.0.1.1        255.255.255.252 UG        0 0          0 eth0\n10.0.0.4        10.0.1.1        255.255.255.252 UG        0 0          0 eth0\n10.0.1.0        0.0.0.0         255.255.255.0   U         0 0          0 eth0\n10.0.2.0        10.0.1.1        255.255.255.0   UG        0 0          0 eth0\n10.0.3.0        10.0.1.1        255.255.255.0   UG        0 0          0 eth0\n10.0.4.0        10.0.1.1        255.255.255.0   UG        0 0          0 eth0\n10.0.255.0      10.0.1.1        255.255.255.0   UG        0 0          0 eth0\n10.1.0.0        10.0.1.1        255.255.255.252 UG        0 0          0 eth0\n198.18.1.0      0.0.0.0         255.255.255.0   U         0 0          0 eth1",
+    "sudo tail -n 50 /var/log/messages": {
+        "output": "Sep 20 07:52:11 localhost daemon.info init: starting pid 1876, tty '': '/sbin/openrc shutdown'\nSep 20 07:52:11 localhost user.debug : Will stop /usr/sbin/sshd\nSep 20 07:52:11 localhost user.debug : Will stop PID 1788\nSep 20 07:52:11 localhost user.debug : Sending signal 15 to PID 1788\nSep 20 07:52:11 localhost auth.info sshd[1788]: Received signal 15; terminating.\nSep 20 07:52:11 localhost user.debug : Will stop /usr/sbin/crond\nSep 20 07:52:11 localhost user.debug : Will stop PID 1752\nSep 20 07:52:11 localhost user.debug : Sending signal 15 to PID 1752\nSep 20 07:52:11 localhost user.debug : Will stop /sbin/syslogd\nSep 20 07:52:11 localhost user.debug : Will stop PID 1674\nSep 20 07:52:11 localhost user.debug : Sending signal 15 to PID 1674\nSep 20 07:52:11 localhost syslog.info syslogd exiting\nOct  9 06:27:44 localhost syslog.info syslogd started: BusyBox v1.35.0\nOct  9 06:27:44 localhost daemon.info init: starting pid 1698, tty '': '/sbin/openrc default'\nOct  9 06:27:44 localhost cron.info crond[1746]: crond (busybox 1.35.0) started, log level 8\nOct  9 06:27:44 localhost auth.info sshd[1790]: Server listening on 0.0.0.0 port 22.\nOct  9 06:27:44 localhost auth.info sshd[1790]: Server listening on :: port 22.\nOct  9 06:27:45 localhost auth.info passwd: password for cisco changed by root\nOct  9 06:27:45 localhost daemon.info init: starting pid 1869, tty '/dev/tty1': '/sbin/getty 38400 tty1'\nOct  9 06:27:45 localhost daemon.info init: starting pid 1870, tty '/dev/tty2': '/sbin/getty 38400 tty2'\nOct  9 06:27:45 localhost daemon.info init: starting pid 1874, tty '/dev/tty3': '/sbin/getty 38400 tty3'\nOct  9 06:27:45 localhost daemon.info init: starting pid 1877, tty '/dev/tty4': '/sbin/getty 38400 tty4'\nOct  9 06:27:45 localhost daemon.info init: starting pid 1881, tty '/dev/tty5': '/sbin/getty 38400 tty5'\nOct  9 06:27:45 localhost daemon.info init: starting pid 1886, tty '/dev/tty6': '/sbin/getty 38400 tty6'\nOct  9 06:27:45 localhost daemon.info init: starting pid 1890, tty '/dev/ttyS0': '/sbin/getty -L 0 ttyS0 vt100'\nOct  9 06:30:00 localhost cron.info crond[1746]: USER root pid 1894 cmd run-parts /etc/periodic/15min\nOct  9 06:45:00 localhost cron.info crond[1746]: USER root pid 1921 cmd run-parts /etc/periodic/15min\nOct  9 06:47:13 localhost auth.info sshd[1926]: Connection closed by 10.17.11.81 port 61916 [preauth]\nOct  9 06:47:38 localhost auth.info sshd[1929]: Connection reset by 10.17.11.81 port 61929 [preauth]\nOct  9 06:47:53 localhost auth.info sshd[1931]: Connection closed by 10.17.11.81 port 61934 [preauth]\nOct  9 06:48:18 localhost auth.info sshd[1934]: Invalid user joeljos from 10.17.11.81 port 61944\nOct  9 06:48:19 localhost auth.info sshd[1934]: Connection closed by invalid user joeljos 10.17.11.81 port 61944 [preauth]\nOct  9 06:49:36 localhost auth.info sshd[1938]: Accepted password for cisco from 10.17.11.81 port 61980 ssh2\nOct  9 06:53:04 localhost auth.info sshd[1948]: Accepted password for cisco from 10.17.11.81 port 62102 ssh2\nOct  9 06:53:38 localhost auth.info sshd[1953]: Accepted password for cisco from 10.17.11.81 port 62116 ssh2\nOct  9 06:56:19 localhost auth.info sshd[1961]: Accepted password for cisco from 10.17.11.81 port 62176 ssh2\nOct  9 06:56:42 localhost auth.info sshd[1966]: Accepted password for cisco from 10.17.11.81 port 62184 ssh2\nOct  9 06:57:10 localhost auth.info sshd[1971]: Accepted password for cisco from 10.17.11.81 port 62210 ssh2\nOct  9 06:57:11 localhost authpriv.notice sudo:    cisco : PWD=/home/cisco ; USER=root ; COMMAND=/sbin/ip addr\nOct  9 06:57:11 localhost authpriv.notice sudo:    cisco : PWD=/home/cisco ; USER=root ; COMMAND=/sbin/ip route\nOct  9 06:57:11 localhost authpriv.notice sudo:    cisco : PWD=/home/cisco ; USER=root ; COMMAND=/sbin/ip neigh\nOct  9 07:00:00 localhost cron.info crond[1746]: USER root pid 1989 cmd run-parts /etc/periodic/15min\nOct  9 07:00:00 localhost cron.info crond[1746]: USER root pid 1990 cmd run-parts /etc/periodic/hourly\nOct  9 07:15:00 localhost cron.info crond[1746]: USER root pid 2016 cmd run-parts /etc/periodic/15min\nOct  9 07:22:28 localhost auth.info sshd[2030]: Accepted password for cisco from 10.17.11.81 port 63274 ssh2\nOct  9 07:26:44 localhost auth.info sshd[2042]: Accepted password for cisco from 10.17.11.81 port 63388 ssh2\nOct  9 07:27:04 localhost auth.info sshd[2046]: Accepted password for cisco from 10.17.11.81 port 63395 ssh2\nOct  9 07:28:29 localhost auth.info sshd[2053]: Accepted password for cisco from 10.17.11.81 port 63464 ssh2\nOct  9 07:28:29 localhost authpriv.notice sudo:    cisco : PWD=/home/cisco ; USER=root ; COMMAND=/sbin/ip addr show dev eth0\nOct  9 07:28:30 localhost authpriv.notice sudo:    cisco : PWD=/home/cisco ; USER=root ; COMMAND=/usr/bin/tail -n 50 /var/log/messages",
         "error": "",
         "exit_status": 0,
         "timeout": false
@@ -35,20 +23,38 @@
         "exit_status": 1,
         "timeout": false
     },
-    "sudo ip link": {
-        "output": "1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000\n    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:00:1c:e4 brd ff:ff:ff:ff:ff:ff\n3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000\n    link/ether 52:54:00:15:82:78 brd ff:ff:ff:ff:ff:ff",
+    "sudo ip route": {
+        "output": "default via 198.18.1.1 dev eth1 \n10.0.0.0/30 via 10.0.1.1 dev eth0 \n10.0.0.4/30 via 10.0.1.1 dev eth0 \n10.0.1.0/24 dev eth0 scope link  src 10.0.1.2 \n10.0.2.0/24 via 10.0.1.1 dev eth0 \n10.0.3.0/24 via 10.0.1.1 dev eth0 \n10.0.4.0/24 via 10.0.1.1 dev eth0 \n10.0.255.0/24 via 10.0.1.1 dev eth0 \n10.1.0.0/30 via 10.0.1.1 dev eth0 \n198.18.1.0/24 dev eth1 scope link  src 198.18.1.113",
         "error": "",
         "exit_status": 0,
         "timeout": false
     },
-    "ping -c 5 10.0.1.1": {
-        "output": "PING 10.0.1.1 (10.0.1.1): 56 data bytes\n64 bytes from 10.0.1.1: seq=0 ttl=42 time=1.831 ms\n64 bytes from 10.0.1.1: seq=1 ttl=42 time=1.254 ms\n64 bytes from 10.0.1.1: seq=2 ttl=42 time=1.069 ms\n64 bytes from 10.0.1.1: seq=3 ttl=42 time=0.915 ms\n64 bytes from 10.0.1.1: seq=4 ttl=42 time=1.128 ms\n\n--- 10.0.1.1 ping statistics ---\n5 packets transmitted, 5 packets received, 0% packet loss\nround-trip min/avg/max = 0.915/1.239/1.831 ms",
+    "sudo ip neigh show dev eth0": {
+        "output": "10.0.1.1 lladdr 52:54:00:12:b2:b4 ref 1 used 0/0/0 probes 1 DELAY",
         "error": "",
         "exit_status": 0,
         "timeout": false
     },
-    "traceroute -m 15 10.0.1.1": {
-        "output": "traceroute to 10.0.1.1 (10.0.1.1), 15 hops max, 46 byte packets\n 1  *  *",
+    "sudo ip -s link show dev eth0": {
+        "output": "",
+        "error": "BusyBox v1.35.0 (2022-08-01 15:14:44 UTC) multi-call binary.\n\nUsage: ip [OPTIONS] address|route|link|tunnel|neigh|rule [ARGS]\n\nOPTIONS := -f[amily] inet|inet6|link | -o[neline]\n\nip addr add|del IFADDR dev IFACE | show|flush [dev IFACE] [to PREFIX]\nip route list|flush|add|del|change|append|replace|test ROUTE\nip link set IFACE [up|down] [arp on|off] [multicast on|off]\n\t[promisc on|off] [mtu NUM] [name NAME] [qlen NUM] [address MAC]\n\t[master IFACE | nomaster] [netns PID]\nip tunnel add|change|del|show [NAME]\n\t[mode ipip|gre|sit] [remote ADDR] [local ADDR] [ttl TTL]\nip neigh show|flush [to PREFIX] [dev DEV] [nud STATE]\nip rule [list] | add|del SELECTOR ACTION",
+        "exit_status": 1,
+        "timeout": false
+    },
+    "ping -c 5 -W 1 10.0.1.1": {
+        "output": "PING 10.0.1.1 (10.0.1.1): 56 data bytes\n64 bytes from 10.0.1.1: seq=0 ttl=42 time=2.240 ms\n64 bytes from 10.0.1.1: seq=1 ttl=42 time=1.153 ms\n64 bytes from 10.0.1.1: seq=2 ttl=42 time=1.235 ms\n64 bytes from 10.0.1.1: seq=3 ttl=42 time=1.062 ms\n64 bytes from 10.0.1.1: seq=4 ttl=42 time=1.103 ms\n\n--- 10.0.1.1 ping statistics ---\n5 packets transmitted, 5 packets received, 0% packet loss\nround-trip min/avg/max = 1.062/1.358/2.240 ms",
+        "error": "",
+        "exit_status": 0,
+        "timeout": false
+    },
+    "ping -c 5 -W 1 10.1.0.2": {
+        "output": "PING 10.1.0.2 (10.1.0.2): 56 data bytes\n\n--- 10.1.0.2 ping statistics ---\n5 packets transmitted, 0 packets received, 100% packet loss",
+        "error": "",
+        "exit_status": 1,
+        "timeout": false
+    },
+    "traceroute -I -m 10 -w 1 -q 1 10.1.0.2": {
+        "output": "traceroute to 10.1.0.2 (10.1.0.2), 10 hops max, 46 byte packets\n 1  *\n 2  *\n 3  *\n 4  *\n 5  *\n 6  *\n 7  *\n 8  *\n 9  *\n10  *",
         "error": "",
         "exit_status": null,
         "timeout": true

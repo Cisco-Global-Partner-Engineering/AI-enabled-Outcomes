@@ -3,10 +3,9 @@ rich
 paramiko  # For SSH connections
 netmiko   # For network device connections
 
-# OpenAI integration
-openai    # For OpenAI API access
-ollama   # For local LLM support
-google
+# AI model integrations
+google-genai  # For Google Gemini API access with built-in retry and rate limiting
+openai  # For OpenAI API access (GPT models)
 
 # Security
 cryptography  # Required by paramiko for key handling

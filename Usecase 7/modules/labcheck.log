@@ -1,0 +1,105 @@
+2025-10-09 08:49:36,097 - INFO - Testing connectivity to branch-router (Cisco IOS virtual Router)...
+2025-10-09 08:49:36,097 - INFO - Testing connectivity to branch-fw (Cisco virtual ASA Firewall)...
+2025-10-09 08:49:36,097 - INFO - Connecting to branch-router (198.18.1.100)...
+2025-10-09 08:49:36,097 - INFO - Testing connectivity to server (alpine virtual linux)...
+2025-10-09 08:49:36,097 - INFO - Connecting to branch-fw (198.18.1.109)...
+2025-10-09 08:49:36,097 - INFO - Testing connectivity to remote-worker (alpine virtual linux)...
+2025-10-09 08:49:36,343 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:49:36,343 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 08:49:36,356 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 08:49:36,356 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:49:36,839 - INFO - Authentication (password) failed.
+2025-10-09 08:49:36,840 - ERROR - Error executing 'show version | include up' on branch-fw: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_asa 198.18.1.109:22
+
+
+Authentication failed.
+2025-10-09 08:49:36,840 - INFO - Device branch-fw: FAILED (0.74s)
+2025-10-09 08:49:36,863 - INFO - Authentication (password) successful!
+2025-10-09 08:49:36,958 - INFO - Authentication (password) successful!
+2025-10-09 08:49:37,140 - INFO - Device server: CONNECTED (1.04s)
+2025-10-09 08:49:37,207 - INFO - Device remote-worker: CONNECTED (1.11s)
+2025-10-09 08:49:37,343 - INFO - Auth banner: b"C\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2025-10-09 08:49:37,439 - INFO - Authentication (password) successful!
+2025-10-09 08:49:39,154 - INFO - Executing command on branch-router: show version | include uptime
+2025-10-09 08:49:39,535 - INFO - Device branch-router: CONNECTED (3.44s)
+2025-10-09 08:53:04,703 - INFO - Testing connectivity to branch-router (Cisco IOS virtual Router)...
+2025-10-09 08:53:04,703 - INFO - Testing connectivity to branch-fw (Cisco virtual ASA Firewall)...
+2025-10-09 08:53:04,703 - INFO - Testing connectivity to server (alpine virtual linux)...
+2025-10-09 08:53:04,703 - INFO - Testing connectivity to remote-worker (alpine virtual linux)...
+2025-10-09 08:53:04,703 - INFO - Connecting to branch-router (198.18.1.100)...
+2025-10-09 08:53:04,703 - INFO - Connecting to branch-fw (198.18.1.109)...
+2025-10-09 08:53:04,941 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 08:53:04,963 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:53:04,963 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 08:53:04,963 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 08:53:05,436 - INFO - Authentication (password) successful!
+2025-10-09 08:53:05,541 - INFO - Authentication (password) successful!
+2025-10-09 08:53:05,542 - INFO - Authentication (password) successful!
+2025-10-09 08:53:05,806 - INFO - Device remote-worker: CONNECTED (1.10s)
+2025-10-09 08:53:05,813 - INFO - Device server: CONNECTED (1.11s)
+2025-10-09 08:53:05,929 - INFO - Auth banner: b"C\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2025-10-09 08:53:06,027 - INFO - Authentication (password) successful!
+2025-10-09 08:53:07,773 - INFO - Executing command on branch-router: show version | include uptime
+2025-10-09 08:53:07,903 - INFO - Executing command on branch-fw: show version | include up
+2025-10-09 08:53:08,123 - INFO - Device branch-router: CONNECTED (3.42s)
+2025-10-09 08:53:14,549 - INFO - Device branch-fw: CONNECTED (9.85s)
+2025-10-09 10:34:57,652 - INFO - Testing connectivity to branch-router (Cisco IOS virtual Router)...
+2025-10-09 10:34:57,652 - INFO - Testing connectivity to branch-fw (Cisco virtual ASA Firewall)...
+2025-10-09 10:34:57,652 - INFO - Testing connectivity to server (alpine virtual linux)...
+2025-10-09 10:34:57,653 - INFO - Testing connectivity to remote-worker (alpine virtual linux)...
+2025-10-09 10:34:57,653 - INFO - Connecting to branch-router (198.18.1.100)...
+2025-10-09 10:34:57,653 - INFO - Connecting to branch-fw (198.18.1.109)...
+2025-10-09 10:34:57,874 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 10:34:57,892 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 10:34:57,892 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 10:34:57,892 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 10:34:58,447 - INFO - Authentication (password) successful!
+2025-10-09 10:34:58,511 - INFO - Authentication (password) successful!
+2025-10-09 10:34:58,511 - INFO - Authentication (password) successful!
+2025-10-09 10:34:58,774 - INFO - Device server: CONNECTED (1.12s)
+2025-10-09 10:34:58,776 - INFO - Device remote-worker: CONNECTED (1.12s)
+2025-10-09 10:34:58,897 - INFO - Auth banner: b"CC\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2025-10-09 10:34:58,993 - INFO - Authentication (password) successful!
+2025-10-09 10:35:00,653 - INFO - Executing command on branch-router: show version | include uptime
+2025-10-09 10:35:00,996 - INFO - Device branch-router: CONNECTED (3.34s)
+2025-10-09 10:35:18,842 - ERROR - Error executing 'show version | include up' on branch-fw: 
+
+Pattern not detected: 'show\\ curpriv' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-10-09 10:35:18,843 - INFO - Device branch-fw: FAILED (21.19s)
+2025-10-09 10:36:14,404 - INFO - Testing connectivity to branch-router (Cisco IOS virtual Router)...
+2025-10-09 10:36:14,404 - INFO - Testing connectivity to branch-fw (Cisco virtual ASA Firewall)...
+2025-10-09 10:36:14,404 - INFO - Testing connectivity to server (alpine virtual linux)...
+2025-10-09 10:36:14,404 - INFO - Connecting to branch-router (198.18.1.100)...
+2025-10-09 10:36:14,405 - INFO - Testing connectivity to remote-worker (alpine virtual linux)...
+2025-10-09 10:36:14,405 - INFO - Connecting to branch-fw (198.18.1.109)...
+2025-10-09 10:36:14,598 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 10:36:14,616 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 10:36:14,616 - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-10-09 10:36:14,616 - INFO - Connected (version 2.0, client OpenSSH_9.0)
+2025-10-09 10:36:15,104 - INFO - Authentication (password) successful!
+2025-10-09 10:36:15,191 - INFO - Authentication (password) successful!
+2025-10-09 10:36:15,192 - INFO - Authentication (password) successful!
+2025-10-09 10:36:15,464 - INFO - Device remote-worker: CONNECTED (1.06s)
+2025-10-09 10:36:15,465 - INFO - Device server: CONNECTED (1.06s)
+2025-10-09 10:36:15,581 - INFO - Auth banner: b"CC\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2025-10-09 10:36:15,819 - INFO - Authentication (password) successful!
+2025-10-09 10:36:17,429 - INFO - Executing command on branch-fw: show version | include up
+2025-10-09 10:36:17,473 - INFO - Executing command on branch-router: show version | include uptime
+2025-10-09 10:36:17,821 - INFO - Device branch-router: CONNECTED (3.42s)
+2025-10-09 10:36:23,453 - INFO - Device branch-fw: CONNECTED (9.05s)
