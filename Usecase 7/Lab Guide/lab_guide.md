@@ -104,10 +104,11 @@ Alternatively, you can use other equivalent LLM services after making sure to ad
    - They should look similar, with various network devices connected to each other
    - use the below configs as needed for the nodes to come up
       IOS : 
-      ip ssh version 2 
-      crypto key generate rsa (and then generate key of 4096 bits)
+     1) In config mode : crypto key generate rsa (and then generate key of 4096 bits)
+     2) In config mode : ip ssh version 2
+     
       ASA : 
-      crypto key generate rsa modulus 4096
+      1) In config mode : crypto key generate rsa modulus 4096
       Then login to asa via ssh from the host and set new password for the 1st time.. use same password as in the credentials file.
 
 ### Step 6: Test SSH Connectivity to Lab Devices
