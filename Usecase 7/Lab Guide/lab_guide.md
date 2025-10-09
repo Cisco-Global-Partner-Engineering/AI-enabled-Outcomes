@@ -112,7 +112,7 @@ Alternatively, you can use other equivalent LLM services after making sure to ad
 
 ### Step 6: Test SSH Connectivity to Lab Devices
 
-0. From your laptop, connect ssh manually to each of the devices and ensure that you are able to see the ssh remote login prompt. You can use the credentials.py file in the modules directory for the ip details for ssh.
+0. From your laptop, connect ssh manually to each of the devices and ensure that you are able to see the ssh remote login prompt. For ASA device, you need to complete a first time login based on the credentials from the credentials file. You can use the credentials.py file in the modules directory for the ip details for ssh.
 1. In your terminal, navigate to the 'modules' directory of the cloned repository
 2. Run the lab check script to verify connectivity to all devices:
 
