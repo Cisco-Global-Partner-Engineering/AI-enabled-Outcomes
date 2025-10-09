@@ -40,6 +40,7 @@ No advanced programming or networking skills are required - this guide explains 
 
 ### Step 1: Book the Cisco dCloud Lab Environment
 
+0. Here are the two environments where our partners can get access to this lab for the BPAP, Paris Oct 2025 : 20 PODS in London: https://dcloud2-lon.cisco.com/event/399956/access and 20 PODs in US East https://dcloud2-rtp.cisco.com/event/408091/access
 1. Go to the dCloud catalog: https://dcloud2.cisco.com/content/catalogue
 2. In the search bar, type "Cisco Modeling Labs 2.6.1-b11 Sandbox"
 3. Click on the lab when it appears in the search results
