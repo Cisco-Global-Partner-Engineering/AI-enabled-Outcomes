@@ -106,8 +106,8 @@ Alternatively, you can use other equivalent LLM services after making sure to ad
      2) In config mode : ip ssh version 2
      
    ASA :
-     0) Set new password for the 1st time (if asked). Use same password as in the credentials file
-     1) In config mode : crypto key generate rsa modulus 4096
+     1) Set new password for the 1st time (if asked). Use same password as in the credentials file
+     2) In config mode : crypto key generate rsa modulus 4096
 
 ### Step 6: Test SSH Connectivity to Lab Devices
 
