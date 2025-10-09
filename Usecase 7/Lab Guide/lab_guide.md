@@ -65,9 +65,9 @@ cd "AI-enabled-Outcomes/Usecase 7"
 
 This lab uses a Large Language Model (LLM) to power the AI agent. Recommended to use a frontier model.
 
-1. Go to https://aistudio.google.com/api-keys
+1. Go to https://platform.openai.com/api-keys (highly recommended) or https://aistudio.google.com/api-keys
 2. Create a new API key
-3. Copy the API key and enter it in 'google_api_key' in the modules/credentials.py file.
+3. Copy the API key and enter it accordingly in 'openai_api_key' or 'google_api_key' in the modules/credentials.py file.
 
 Alternatively, you can use other equivalent LLM services after making sure to adjust the code accordingly in the credentials.py and dochat.py files.
 
